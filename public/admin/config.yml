@@ -23,3 +23,14 @@ collections:
       - {label: "SEO Title (для поиска)", name: "seo_title", widget: "string", required: false }
       - {label: "SEO Description", name: "description", widget: "text"}
       - {label: "Текст статьи", name: "body", widget: "markdown"}
+      - label: "Проект (Домен)"
+        name: "project"
+        widget: "select"
+        options:
+          - {label: "JPG to WebP (.onl)", value: "jpg-to-webp"}
+          - {label: "PNG to WebP (.online)", value: "png-to-webp"}
+          - {label: "WebP to PNG (.xyz)", value: "webp-to-png"}
+          - {label: "WebP to JPG (.pro)", value: "webp-to-jpg"}
+          - {label: "PNG to JPG (.pics)", value: "png-to-jpg"}
+          - {label: "JPG to PNG (.help)", value: "jpg-to-png"}
+          - {label: "Email Signatures (.xyz)", value: "signatures"}
