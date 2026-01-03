@@ -1,0 +1,27 @@
+---
+const { content } = Astro.props;
+import Layout from './Layout.astro';
+---
+<Layout 
+  title={content.seo_title || content.title} 
+  description={content.description}
+  image={content.image}
+>
+  <article>
+    {content.image && content.show_image && (
+      <img src={content.image} alt={content.title} />
+    )}
+
+    <header style="margin-bottom: 40px;">
+      <h1>{content.title}</h1>
+      {content.date && (
+        <time style="color: #6a737d; font-size: 0.9rem;">
+          {new Date(content.date).toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      )}
+    </header>
+    
+    <div class="post-content">
+      <slot /> </div>
+  </article>
+</Layout>
