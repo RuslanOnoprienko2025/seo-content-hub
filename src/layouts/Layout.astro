@@ -7,7 +7,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
 const ogImage = image ? new URL(image, Astro.url.origin) : null;
 
 // 3. Логика поддоменов: Название сайта и Фавикон
-const isSignature = project === 'signatures';
+const isSignature = project && project.includes('Signatures');
 const siteName = isSignature ? 'Email Signatures Generator' : 'Fast Image Convert';
 const favicon = isSignature ? '/favicon-signatures.svg' : '/favicon-converters.svg';
 ---
