@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: RuslanOnoprienko2025/seo-content-hub
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Статьи"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Шаблон", name: "layout", widget: "select", options: ["../../layouts/Guide.astro", "../../layouts/Comparison.astro"]}
+      - {label: "Обложка (скрытая)", name: "image", widget: "image"}
+      - {label: "Текст статьи", name: "body", widget: "markdown"}
