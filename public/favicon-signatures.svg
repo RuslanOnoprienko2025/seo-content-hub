@@ -1,0 +1,60 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Круглый фон -->
+  <circle cx="100" cy="100" r="100" fill="#5B4FFF"/>
+  
+  <!-- Тень для объема -->
+  <circle cx="100" cy="100" r="100" fill="url(#gradient)" opacity="0.3"/>
+  
+  <!-- Градиент для объема -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Прямоугольник (документ/заметка) -->
+  <rect x="45" y="60" width="90" height="70" rx="8" ry="8" 
+        fill="none" stroke="white" stroke-width="6" 
+        stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#shadow)"/>
+  
+  <!-- Линии текста -->
+  <line x1="60" y1="80" x2="95" y2="80" 
+        stroke="white" stroke-width="5" 
+        stroke-linecap="round"/>
+  
+  <line x1="60" y1="95" x2="95" y2="95" 
+        stroke="white" stroke-width="5" 
+        stroke-linecap="round"/>
+  
+  <line x1="60" y1="110" x2="80" y2="110" 
+        stroke="white" stroke-width="5" 
+        stroke-linecap="round"/>
+  
+  <!-- Карандаш/ручка -->
+  <g filter="url(#shadow)">
+    <!-- Тело карандаша -->
+    <path d="M 108 105 L 145 68 L 155 78 L 118 115 Z" 
+          fill="white" stroke="white" stroke-width="2" 
+          stroke-linejoin="round"/>
+    
+    <!-- Кончик карандаша -->
+    <path d="M 145 68 L 150 63 L 160 73 L 155 78 Z" 
+          fill="white" opacity="0.8"/>
+    
+
+  </g>
+</svg>
