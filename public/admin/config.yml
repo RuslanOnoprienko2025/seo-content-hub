@@ -16,6 +16,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Шаблон", name: "layout", widget: "select", options: ["../../layouts/Guide.astro", "../../layouts/Comparison.astro"]}
-      - {label: "Обложка (скрытая)", name: "image", widget: "image"}
+      - {label: "Дата (для порядка)", name: "date", widget: "datetime"}
+      - {label: "Шаблон", name: "layout", widget: "select", options: ["../../layouts/Guide.astro", "../../layouts/Comparison.astro", "../../layouts/Post.astro"]}
+      - {label: "Обложка", name: "image", widget: "image"}
+      - {label: "Показывать обложку в статье?", name: "show_image", widget: "boolean", default: true}
+      - {label: "SEO Title (для поиска)", name: "seo_title", widget: "string", required: false }
+      - {label: "SEO Description", name: "description", widget: "text"}
       - {label: "Текст статьи", name: "body", widget: "markdown"}
