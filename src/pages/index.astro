@@ -2,32 +2,73 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Определяем, на каком поддомене находится пользователь
+// 1. Получаем текущий домен
 const hostname = Astro.url.hostname;
 
-// 2. Карта соответствия: какой поддомен какой проект показывает
-const projectMap = {
-  'blog.fastimageconvert.onl': 'webp',
-  'blog.emailsignatures.xyz': 'signatures',
-  // Сюда добавите остальные 5 поддоменов в будущем
+// 2. Полная карта SEO и проектов (7 доменов)
+const seoConfigs = {
+  "blog.fastimageconvert.onl": {
+    title: "JPG to WebP Conversion Guide - Optimization Tips",
+    description: "Learn how to convert JPG to WebP for better performance. Expert guides on compression techniques, quality settings, and modern format benefits.",
+    canonical: "https://blog.fastimageconvert.onl/",
+    project: "jpg-to-webp"
+  },
+  "blog.fastimageconvert.online": {
+    title: "WebP Optimization Guide - PNG Compression Tips",
+    description: "Master WebP format for modern websites. Learn compression techniques, transparency handling, and performance optimization for PNG images.",
+    canonical: "https://blog.fastimageconvert.online/",
+    project: "png-to-webp"
+  },
+  "blog.fastimageconvert.xyz": {
+    title: "WebP to PNG Guide - Compatibility & Design Tips",
+    description: "Convert WebP to PNG while preserving quality. Expert guides on compatibility, transparency, and professional design workflows.",
+    canonical: "https://blog.fastimageconvert.xyz/",
+    project: "webp-to-png"
+  },
+  "blog.fastimageconvert.pro": {
+    title: "WebP to JPG Conversion Guide - Compatibility Tips",
+    description: "Learn how to convert WebP to JPG for universal compatibility. Expert guides on quality settings, compression techniques, and device support.",
+    canonical: "https://blog.fastimageconvert.pro/",
+    project: "webp-to-jpg"
+  },
+  "blog.fastimageconvert.pics": {
+    title: "PNG to JPG Guide - Compression & Quality Tips",
+    description: "Learn how to compress PNG to JPG efficiently. Expert guides on quality settings, file size reduction, and choosing the right format for web use.",
+    canonical: "https://blog.fastimageconvert.pics/",
+    project: "png-to-jpg"
+  },
+  "blog.fastimageconvert.help": {
+    title: "PNG Transparency Guide - JPG Conversion Tips",
+    description: "Learn how to add transparency to images by converting JPG to PNG. Expert guides on alpha channels, logo creation, and lossless quality.",
+    canonical: "https://blog.fastimageconvert.help/",
+    project: "jpg-to-png"
+  },
+  "blog.emailsignatures.xyz": {
+    title: "Email Signature Best Practices - Business Tips",
+    description: "Learn email signature best practices for business. Expert guides on formatting, contact details, branding, and professional communication standards.",
+    canonical: "https://blog.emailsignatures.xyz/",
+    project: "signatures"
+  }
 };
 
-// 3. Определяем текущий проект (если домен не в списке, берем 'webp')
-const currentProject = projectMap[hostname] || 'webp';
+// 3. Выбираем конфигурацию для текущего домена (если не найден - берем первый из списка)
+const currentConfig = seoConfigs[hostname] || seoConfigs["blog.fastimageconvert.onl"];
 
-// 4. Получаем все статьи и фильтруем их по проекту
+// 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
 const allPosts = await getCollection('blog');
-const filteredPosts = allPosts.filter(post => post.data.project === currentProject);
 
-// 5. Сортируем по дате
+// 5. Фильтруем статьи по метке project, которую мы указали в seoConfigs
+const filteredPosts = allPosts.filter(post => post.data.project === currentConfig.project);
+
+// 6. Сортируем статьи по дате (свежие сверху)
 const sortedPosts = filteredPosts.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 ---
 
-<Layout title="Expert Blog" description="Knowledge base">
+<Layout title={currentConfig.title} description={currentConfig.description} canonical={currentConfig.canonical}>
   <header style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-    <h1>{currentProject === 'webp' ? 'Image Optimization' : 'Email Etiquette'}</h1>
+    <h1>{currentConfig.title}</h1>
   </header>
 
   <section>
@@ -46,7 +87,7 @@ const sortedPosts = filteredPosts.sort((a, b) =>
         </article>
       ))
     ) : (
-      <p>Статей для этого проекта пока нет.</p>
+      <p>Articles for this project are coming soon.</p>
     )}
   </section>
 </Layout>
