@@ -16,9 +16,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Дата (для порядка)", name: "date", widget: "datetime"}
+      - {label: "Дата (для порядка)", name: "date", widget: "datetime", required: false}
       - {label: "Шаблон", name: "layout", widget: "select", options: ["Guide", "Comparison", "Post"]}
-      - {label: "Обложка", name: "image", widget: "image"}
+      - {label: "Обложка", name: "image", widget: "image", required: false}
       - {label: "Показывать обложку в статье?", name: "show_image", widget: "boolean", default: true}
       - {label: "SEO Title (для поиска)", name: "seo_title", widget: "string", required: false }
       - {label: "SEO Description", name: "description", widget: "text"}
