@@ -17,7 +17,7 @@ collections:
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Дата (для порядка)", name: "date", widget: "datetime"}
-      - {label: "Шаблон", name: "layout", widget: "select", options: ["../../layouts/Guide.astro", "../../layouts/Comparison.astro", "../../layouts/Post.astro"]}
+      - {label: "Шаблон", name: "layout", widget: "select", options: ["Guide", "Comparison", "Post"]}
       - {label: "Обложка", name: "image", widget: "image"}
       - {label: "Показывать обложку в статье?", name: "show_image", widget: "boolean", default: true}
       - {label: "SEO Title (для поиска)", name: "seo_title", widget: "string", required: false }
