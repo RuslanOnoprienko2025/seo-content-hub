@@ -1,7 +1,7 @@
 ---
 title: "How to Convert WebP to JPG: The Complete Conversion Guide (Free Tools)"
 date: 2026-01-05T20:25:00.000+02:00
-layout: Guide
+layout: ../layouts/Guide.astro
 show_image: false
 seo_title: How to Convert WebP to JPG Free Without Uploading
 description: Step-by-step guide on using privacy-focused, client-side converters
