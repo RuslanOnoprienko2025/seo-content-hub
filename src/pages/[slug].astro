@@ -13,9 +13,19 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
+{/* Передаем параметры в Layout, но внутри убираем лишние ограничения */}
 <Layout title={entry.data.title} description={entry.data.description} project={entry.data.project}>
-  <article>
-    <h1>{entry.data.title}</h1>
-    <Content />
-  </article>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <article class="prose prose-lg prose-slate max-w-none">
+      <Content />
+    </article>
+  </main>
 </Layout>
+
+<style is:global>
+  /* Если заголовок всё еще дублируется, этот стиль скроет тот, 
+     который выводится автоматически внутри Layout, 
+     оставив только заголовок из шаблона статьи */
+  
+  /* .your-layout-h1-class { display: none; } */
+</style>
