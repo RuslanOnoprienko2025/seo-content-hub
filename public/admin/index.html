@@ -8,5 +8,22 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Регистрируем шаблон превью для коллекции "blog"
+    CMS.registerPreviewTemplate("blog", createClass({
+      render: function() {
+        const entry = this.props.entry;
+        const title = entry.getIn(['data', 'title']);
+        // widgetFor('body') выводит только то, что написано в поле "Текст статьи"
+        const body = this.props.widgetFor('body');
+
+        return h('div', { style: { padding: '20px', fontFamily: 'sans-serif' } },
+          h('h1', { style: { fontSize: '2rem', marginBottom: '10px' } }, title),
+          h('hr', { style: { border: '0', borderTop: '1px solid #eee', margin: '20px 0' } }),
+          h('div', { className: 'guide-content' }, body)
+        );
+      }
+    }));
+  </script>
 </body>
 </html>
