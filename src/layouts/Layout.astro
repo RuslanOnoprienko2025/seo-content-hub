@@ -1,12 +1,7 @@
 ---
-// 1. Получаем данные из админки
 const { title, description, project, image } = Astro.props;
-
-// 2. Формируем ссылки для LinkedIn и Каноникал
 const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
 const ogImage = image ? new URL(image, Astro.url.origin) : null;
-
-// 3. Логика поддоменов: Название сайта и Фавикон
 const isSignature = project && project.includes('Signatures');
 const siteName = isSignature ? 'Email Signatures Generator' : 'Fast Image Convert';
 const favicon = isSignature ? '/favicon-signatures.svg' : '/favicon-converters.svg';
@@ -16,73 +11,35 @@ const favicon = isSignature ? '/favicon-signatures.svg' : '/favicon-converters.s
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    <meta name="robots" content="index, follow" />
-
     <link rel="icon" type="image/svg+xml" href={favicon} />
-
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta property="og:site_name" content={siteName} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
 
     <style is:global>
         :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --text-light: #666666;
-            --accent: #0070f3;
-            --code-bg: #f5f5f7;
-            --border: #eeeeee;
+            --bg: #ffffff; --text: #1a1a1a; --accent: #0070f3; --border: #eeeeee;
         }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0; padding: 0;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 0; padding: 0; color: var(--text); background: var(--bg);
         }
-
+        /* Увеличили ширину до 1000px для статей */
         .container {
-            max-width: 680px;
+            max-width: 1000px; 
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
-
-        /* Твои стили заголовков */
-        h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem; }
-        h2 { font-size: 1.8rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; }
-        h3 { font-size: 1.4rem; font-weight: 600; margin-top: 2rem; }
-
-        /* Текст */
-        p { margin-bottom: 1.5rem; font-size: 1.125rem; }
-        ul, ol { margin-bottom: 1.5rem; padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; font-size: 1.125rem; }
-
-        /* Таблицы */
-        table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.95rem; }
-        th { border-bottom: 2px solid #000; text-align: left; padding: 12px; font-weight: 700; }
-        td { border-bottom: 1px solid var(--border); padding: 12px; }
-
-        /* Код */
-        pre { background: var(--code-bg); padding: 20px; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; margin: 2rem 0; border: 1px solid var(--border); }
+        h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        p { margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.6; }
+        img { max-width: 100%; border-radius: 12px; }
         
-        /* Ссылки и изображения */
-        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
-        a:hover { border-bottom-color: var(--accent); }
-        img { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; }
+        /* Стили для контента из админки (Markdown) */
+        .prose h2 { font-size: 1.8rem; font-weight: 700; margin-top: 2.5rem; }
+        .prose ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
     </style>
 </head>
 <body>
