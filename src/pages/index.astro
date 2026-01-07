@@ -2,14 +2,20 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем домен
-const hostname = Astro.request.headers.get('cf-connecting-ip') ? 
-                 (Astro.request.headers.get('x-forwarded-host') || 
-                  Astro.request.headers.get('host')) :
-                 Astro.url.hostname;
+// 1. Получаем домен (чистый и стабильный вариант)
+const forwardedHost = Astro.request.headers.get('x-forwarded-host');
+const hostHeader = Astro.request.headers.get('host');
+const cfIp = Astro.request.headers.get('cf-connecting-ip');
 
-// Очищаем от портов и пробелов (важно для SSR)
-const hostname = rawHostname ? rawHostname.split(':')[0].split(',')[0].trim() : '';
+let rawHostname;
+if (cfIp) {
+    rawHostname = forwardedHost || hostHeader;
+} else {
+    rawHostname = Astro.url.hostname;
+}
+
+// Убираем порт и лишние пробелы, чтобы не было ошибки 500
+const hostname = rawHostname ? rawHostname.split(':')[0].trim() : '';
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
