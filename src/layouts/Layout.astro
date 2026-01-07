@@ -4,7 +4,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
 const favicon = project && project.includes('Signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,69 +15,116 @@ const favicon = project && project.includes('Signatures') ? '/favicon-signatures
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style is:global>
+        :root {
+            --text-main: #1a1a1b;
+            --text-muted: #4b5563;
+            --link-color: #0070f3;
+            --code-bg: #f6f8fa;
+            --code-border: #e1e4e8;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             margin: 0;
             padding: 0;
-            color: #1a1a1a;
+            color: var(--text-main);
             background-color: #ffffff;
-            line-height: 1.6;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 900px; /* Немного сузили для лучшей читаемости */
+            max-width: 850px; /* Оптимальная ширина для чтения лонгридов */
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 24px;
         }
 
-        /* Заголовок: убрали лишнюю жирность, добавили чистоты */
+        /* Заголовки */
         h1 { 
-            font-size: 2.5rem; 
+            font-size: 2.8rem; 
             font-weight: 700; 
             line-height: 1.2; 
-            margin-bottom: 1.5rem;
-            color: #000;
+            margin-bottom: 2rem;
             letter-spacing: -0.02em;
+            color: #000;
         }
 
         .prose h2 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 600;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            color: #111;
         }
 
-        /* Картинки: убрали тени и фоны, оставили только аккуратность */
+        /* Текст */
+        .prose p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Ссылки */
+        .prose a {
+            color: var(--link-color);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.2s;
+        }
+
+        .prose a:hover {
+            opacity: 0.8;
+        }
+
+        /* КАРТИНКИ: убираем черноту и тени */
         img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 2.5rem auto;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+        }
+
+        /* КОДОВЫЕ ПЛАШКИ: теперь светлые и аккуратные */
+        pre {
+            background-color: var(--code-bg) !important;
+            border: 1px solid var(--code-border);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
             margin: 2rem 0;
-            border: 1px solid #eee; /* Тонкая серая рамка вместо тени */
-            border-radius: 4px; /* Совсем легкое скругление */
         }
 
-        /* Ссылки: просто подчеркивание, без заливок */
-        .prose a {
-            color: #0070f3;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 0.95rem;
+            color: #24292e !important; /* Темный текст на светлом фоне */
         }
 
-        .prose a:hover {
-            color: #0051ad;
+        /* Код внутри строки текста */
+        :not(pre) > code {
+            background-color: #f3f4f6;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #eb5757 !important; /* Немного выделяем цветом */
         }
 
-        .prose p { margin-bottom: 1.25rem; }
+        /* Адаптивность */
+        @media (max-width: 640px) {
+            h1 { font-size: 2.1rem; }
+            .container { padding: 40px 16px; }
+        }
     </style>
 </head>
 <body>
     <main class="container">
-        <slot />
+        <article class="prose">
+            <slot />
+        </article>
     </main>
 </body>
 </html>
