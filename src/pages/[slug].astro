@@ -1,31 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
 
 const { slug } = Astro.params;
-const allPosts = await getCollection('blog');
-const entry = allPosts.find(post => post.slug === slug);
+const posts = await getCollection('blog');
+const entry = posts.find(p => p.slug === slug);
 
 if (!entry) {
-  return Astro.redirect('/404');
+  return new Response('Not found', { status: 404 });
 }
 
 const { Content } = await entry.render();
 ---
-
-{/* Передаем параметры в Layout, но внутри убираем лишние ограничения */}
-<Layout title={entry.data.title} description={entry.data.description} project={entry.data.project}>
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <article class="prose prose-lg prose-slate max-w-none">
-      <Content />
-    </article>
-  </main>
-</Layout>
-
-<style is:global>
-  /* Если заголовок всё еще дублируется, этот стиль скроет тот, 
-     который выводится автоматически внутри Layout, 
-     оставив только заголовок из шаблона статьи */
-  
-  /* .your-layout-h1-class { display: none; } */
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{entry.data.title}</title>
+</head>
+<body>
+    <h1>{entry.data.title}</h1>
+    <Content />
+</body>
+</html>
