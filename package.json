@@ -9,8 +9,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.16.18",
-    "@astrojs/sitemap": "^3.2.2",
-    "@astrojs/cloudflare": "^11.1.1"
+    "astro": "4.11.5",
+    "@astrojs/cloudflare": "10.2.5",
+    "@astrojs/sitemap": "^3.0.0"
   }
 }
