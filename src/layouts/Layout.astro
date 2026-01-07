@@ -1,13 +1,10 @@
 ---
 const { title, description, project, image } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
-const ogImage = image ? new URL(image, Astro.url.origin) : null;
-const isSignature = project && project.includes('Signatures');
-const siteName = isSignature ? 'Email Signatures Generator' : 'Fast Image Convert';
-const favicon = isSignature ? '/favicon-signatures.svg' : '/favicon-converters.svg';
+const favicon = project && project.includes('Signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
 ---
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,103 +12,67 @@ const favicon = isSignature ? '/favicon-signatures.svg' : '/favicon-converters.s
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style is:global>
-        :root {
-            --bg: #ffffff;
-            --text: #111827; /* Глубокий графитовый вместо чисто черного */
-            --accent: #0070f3;
-            --accent-soft: rgba(0, 112, 243, 0.1);
-            --border: #e5e7eb;
-            --muted: #6b7280;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased; /* Делает шрифт более четким */
-            line-height: 1.7; /* Больше воздуха для легкого чтения */
+            color: #1a1a1a;
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1000px; /* Сохраняем широкую верстку */
+            max-width: 900px; /* Немного сузили для лучшей читаемости */
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 40px 20px;
         }
 
-        /* Стиль основного заголовка статьи */
+        /* Заголовок: убрали лишнюю жирность, добавили чистоты */
         h1 { 
-            font-size: 3.2rem; 
-            font-weight: 800; 
-            line-height: 1.1; 
-            margin-bottom: 2rem;
-            letter-spacing: -0.04em; /* Плотный "дизайнерский" заголовок */
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            margin-bottom: 1.5rem;
             color: #000;
-        }
-
-        /* Улучшаем внешний вид Markdown контента */
-        .prose {
-            color: var(--text);
-            font-size: 1.15rem;
-        }
-
-        .prose h2 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            margin-top: 3rem;
-            margin-bottom: 1.25rem;
             letter-spacing: -0.02em;
         }
 
-        /* Стильные ссылки с мягким фоном при наведении */
+        .prose h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Картинки: убрали тени и фоны, оставили только аккуратность */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem 0;
+            border: 1px solid #eee; /* Тонкая серая рамка вместо тени */
+            border-radius: 4px; /* Совсем легкое скругление */
+        }
+
+        /* Ссылки: просто подчеркивание, без заливок */
         .prose a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent-soft);
-            font-weight: 500;
-            transition: all 0.2s ease;
+            color: #0070f3;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         .prose a:hover {
-            background-color: var(--accent-soft);
-            border-bottom-color: var(--accent);
+            color: #0051ad;
         }
 
-        .prose p {
-            margin-bottom: 1.8rem;
-        }
-
-        .prose ul, .prose ol {
-            margin-bottom: 1.8rem;
-            padding-left: 1.5rem;
-        }
-
-        .prose li {
-            margin-bottom: 0.6rem;
-        }
-
-        img {
-            max-width: 100%;
-            border-radius: 16px; /* Более мягкие углы у картинок */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Легкая тень для объема */
-            margin: 2rem 0;
-        }
-
-        /* Адаптивность для мобилок */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .container { padding: 40px 20px; }
-        }
+        .prose p { margin-bottom: 1.25rem; }
     </style>
 </head>
 <body>
