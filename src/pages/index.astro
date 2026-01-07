@@ -51,25 +51,25 @@ const seoConfigs = {
   }
 };
 
-// 3. Выбираем конфигурацию для текущего домена
-const currentHostname = hostname.toLowerCase().trim();
+// 3. Выбираем конфигурацию (усиленный поиск)
+const currentHostname = Astro.url.hostname.replace('www.', '').replace(/\.$/, '').toLowerCase().trim();
 
-// Ищем конфиг. Теперь мы не берем "первый попавшийся" по умолчанию.
+// Ищем точное совпадение
 let currentConfig = seoConfigs[currentHostname];
 
-// Если точного совпадения нет (например, зашли через www), ищем по частичному совпадению
+// Если не нашли (например, из-за поддоменов), ищем по вхождению
 if (!currentConfig) {
   const matchingKey = Object.keys(seoConfigs).find(key => currentHostname.includes(key));
   currentConfig = matchingKey ? seoConfigs[matchingKey] : null;
 }
 
-// Если конфиг всё равно не найден, выводим пустые значения или общую ошибку, 
-// но НЕ данные другого блога
+// Если вообще не нашли, ставим заглушку, чтобы не было ошибок
 if (!currentConfig) {
   currentConfig = {
     title: "Blog",
     description: "Welcome to our blog",
-    project: "none"
+    project: "none",
+    canonical: Astro.url.href
   };
 }
 
