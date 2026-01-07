@@ -63,32 +63,19 @@ const seoConfigs = {
   }
 };
 
-// 3. Выбираем конфигурацию
-const getCleanHost = (str) => {
-  if (!str) return '';
-  return str
-    .split(':')[0]           // Отрезаем порт (:443), если он есть
-    .replace('www.', '')     // Убираем www
-    .replace('blog.', '')    // Убираем blog
-    .toLowerCase()
-    .trim();
-};
+// 3. Прямое сравнение БЕЗ очистки
+let currentConfig = seoConfigs[hostname];
 
-const currentHostnameClean = getCleanHost(hostname);
-
-// Ищем ключ
-const matchingKey = Object.keys(seoConfigs).find(key => 
-  getCleanHost(key) === currentHostnameClean
-);
-
-let currentConfig = seoConfigs[matchingKey];
-
-// КРИТИЧЕСКИЙ МОМЕНТ ДЛЯ СТАБИЛЬНОСТИ:
+// Если не нашли - попробуем убрать www
 if (!currentConfig) {
-  // Если домен не найден, берем первый попавшийся, чтобы сайт НЕ ПАДАЛ в [object Object]
-  // Но в консоль выводим ошибку, чтобы ты видел, какой хост пришел
-  console.error("DEBUG: Hostname not matched. Received:", hostname, "Cleaned as:", currentHostnameClean);
-  currentConfig = Object.values(seoConfigs)[0]; 
+  const withoutWww = hostname.replace('www.', '');
+  currentConfig = seoConfigs[withoutWww];
+}
+
+// Если всё ещё не нашли - дефолтный конфиг
+if (!currentConfig) {
+  console.error("DEBUG: Hostname not matched. Received:", hostname);
+  currentConfig = seoConfigs["blog.fastimageconvert.help"]; // Дефолтный
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
