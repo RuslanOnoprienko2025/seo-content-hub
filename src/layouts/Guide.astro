@@ -1,6 +1,7 @@
 ---
-const { content } = Astro.props;
 import Layout from './Layout.astro';
+const { title, seo_title, description, image, show_image, project } = Astro.props;
+const content = { title, seo_title, description, image, show_image, project };
 ---
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image}>
     <article>
