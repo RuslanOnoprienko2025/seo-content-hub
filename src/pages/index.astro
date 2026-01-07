@@ -2,8 +2,10 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем текущий домен
-const hostname = Astro.url.hostname;
+// 1. Получаем текущий домен максимально надежным способом
+const host = Astro.request.headers.get('host') || '';
+// Убираем www. и лишние пробелы, чтобы точно совпало с ключами в seoConfigs
+const hostname = host.replace('www.', '').toLowerCase().trim();
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
