@@ -55,26 +55,23 @@ const seoConfigs = {
 };
 
 // 3. Выбираем конфигурацию
-// Эта функция очищает домен от лишнего (blog. и www.), чтобы сравнение было точным
 const getCleanHost = (str) => str.replace('blog.', '').replace('www.', '').toLowerCase().trim();
 
-const currentHostnameClean = getCleanHost(hostname);
+// Очищаем текущий хост от порта (если он есть) и лишних пробелов
+const currentHostnameClean = getCleanHost(hostname.split(':')[0]);
 
-// Ищем ключ в твоем seoConfigs, который после очистки совпадет с текущим доменом
-const matchingKey = Object.keys(seoConfigs).find(key => 
-  getCleanHost(key) === currentHostnameClean
-);
+// Ищем ключ, используя includes (это надежнее на серверах)
+const matchingKey = Object.keys(seoConfigs).find(key => {
+  const cleanKey = getCleanHost(key);
+  return currentHostnameClean.includes(cleanKey) || cleanKey.includes(currentHostnameClean);
+});
 
 let currentConfig = seoConfigs[matchingKey];
 
-// ЗАПАСНОЙ ВАРИАНТ (на случай, если домен не найден в списке)
+// Если домен всё равно не найден (защита от падения 500)
 if (!currentConfig) {
-  currentConfig = {
-    title: "Blog - " + hostname,
-    description: "Welcome to our blog",
-    project: "none",
-    canonical: "https://" + hostname
-  };
+  console.error("Domain not found:", hostname); // Это появится в логах Cloudflare
+  currentConfig = seoConfigs["blog.fastimageconvert.onl"]; // Берем один как базу, чтобы не было [object Object]
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
