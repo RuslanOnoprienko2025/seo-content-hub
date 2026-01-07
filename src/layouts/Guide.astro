@@ -9,9 +9,17 @@ import Layout from './Layout.astro';
         </div>
         <h1>{content.title}</h1>
 
-        {content.image && content.show_image && <img src={content.image} alt={content.title} />}
+        {/* Обновленная строка с картинкой */}
+        {content.image && content.show_image && (
+          <img 
+            src={content.image} 
+            alt={content.title} 
+            style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; margin: 2rem 0; display: block;" 
+          />
+        )}
 
         <section class="guide-content">
-            <slot /> </section>
+            <slot /> 
+        </section>
     </article>
 </Layout>
