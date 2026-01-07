@@ -1,13 +1,13 @@
 ---
-const hostname = new URL(Astro.request.url).hostname;
+const hostname = Astro.url.hostname;
 ---
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test SSR</title>
+    <title>Astro 5 Test</title>
 </head>
 <body>
-    <h1>SSR Works!</h1>
+    <h1>Astro 5 SSR</h1>
     <p>Domain: {hostname}</p>
 </body>
 </html>
