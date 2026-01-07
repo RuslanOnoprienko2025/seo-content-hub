@@ -90,12 +90,12 @@ const sortedPosts = filteredPosts.sort((a, b) =>
       sortedPosts.map(post => (
         <article style="margin-bottom: 30px;">
           <h2 style="font-size: 1.8rem; margin-bottom: 10px;">
-            <a href={`/blog/${post.slug}`} style="color: #1a1a1a; text-decoration: none;">
+            <a href={`/${post.slug}`} style="color: #1a1a1a; text-decoration: none;">
               {post.data.title}
             </a>
           </h2>
           <p style="color: #666;">{post.data.description}</p>
-          <a href={`/blog/${post.slug}`} style="color: #0070f3; font-weight: bold; text-decoration: none;">
+          <a href={`/${post.slug}`} style="color: #0070f3; font-weight: bold; text-decoration: none;">
             Read article →
           </a>
         </article>
