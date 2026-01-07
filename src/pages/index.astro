@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем домен из URL (это работает всегда, даже если сервер не передает заголовки)
-const hostname = Astro.url.hostname.replace('www.', '').toLowerCase().trim();
+// 1. Получаем хост максимально надежно для Cloudflare
+const host = Astro.request.headers.get('host') || '';
+const hostname = host.replace('www.', '').toLowerCase().trim();
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
@@ -51,23 +52,24 @@ const seoConfigs = {
   }
 };
 
-// 3. Прямой и точный поиск
-// Мы сравниваем чистый хост (например, fastimageconvert.help) 
-// с ключами в конфиге, убирая "blog." для страховки.
-const matchingKey = Object.keys(seoConfigs).find(key => {
-  const cleanKey = key.replace('blog.', '').toLowerCase();
-  const cleanHost = hostname.replace('blog.', '').toLowerCase();
-  return cleanKey === cleanHost;
-});
+// 3. Выбираем конфигурацию
+// Эта функция очищает домен от лишнего (blog. и www.), чтобы сравнение было точным
+const getCleanHost = (str) => str.replace('blog.', '').replace('www.', '').toLowerCase().trim();
+
+const currentHostnameClean = getCleanHost(hostname);
+
+// Ищем ключ в твоем seoConfigs, который после очистки совпадет с текущим доменом
+const matchingKey = Object.keys(seoConfigs).find(key => 
+  getCleanHost(key) === currentHostnameClean
+);
 
 let currentConfig = seoConfigs[matchingKey];
 
-// Если зашли по адресу, которого нет в списке (или на тех. домен хостинга)
+// ЗАПАСНОЙ ВАРИАНТ (на случай, если домен не найден в списке)
 if (!currentConfig) {
-  // Выводим данные для отладки, чтобы понять, что видит Astro.url
   currentConfig = {
-    title: "Domain detected: " + hostname,
-    description: "Please add this domain to seoConfigs",
+    title: "Blog - " + hostname,
+    description: "Welcome to our blog",
     project: "none",
     canonical: "https://" + hostname
   };
