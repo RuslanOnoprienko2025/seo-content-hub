@@ -1,16 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const testData = {
-  title: "Test Page",
-  description: "Testing",
-  canonical: "https://test.com",
-  project: "test",
-  hostname: "unknown"
-};
+const hostname = new URL(Astro.request.url).hostname;
 ---
-
-<Layout title={testData.title} description={testData.description} canonical={testData.canonical} project={testData.project} image="">
-  <h1>Test Page Works!</h1>
-  <p>If you see this, Layout is working.</p>
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <h1>It Works!</h1>
+    <p>Hostname: {hostname}</p>
+</body>
+</html>
