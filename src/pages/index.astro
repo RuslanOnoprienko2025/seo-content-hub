@@ -53,26 +53,19 @@ const seoConfigs = {
   }
 };
 
-// 3. Выбираем конфигурацию (усиленный поиск)
-const currentHostname = Astro.url.hostname.replace('www.', '').replace(/\.$/, '').toLowerCase().trim();
+// 3. Улучшенный выбор конфигурации для всех 7 доменов
+const currentHostname = (Astro.request.headers.get('host') || Astro.url.hostname || '').toLowerCase();
 
-// Ищем точное совпадение
-let currentConfig = seoConfigs[currentHostname];
+// Ищем, какой из наших ключей (доменов) входит в текущий hostname
+const matchingKey = Object.keys(seoConfigs).find(key => currentHostname.includes(key.replace('blog.', '')));
 
-// Если не нашли (например, из-за поддоменов), ищем по вхождению
+let currentConfig = seoConfigs[matchingKey];
+
+// Если домен все равно не определился (например, на тех. адресе хостинга)
 if (!currentConfig) {
-  const matchingKey = Object.keys(seoConfigs).find(key => currentHostname.includes(key));
-  currentConfig = matchingKey ? seoConfigs[matchingKey] : null;
-}
-
-// Если вообще не нашли, ставим заглушку, чтобы не было ошибок
-if (!currentConfig) {
-  currentConfig = {
-    title: "Blog",
-    description: "Welcome to our blog",
-    project: "none",
-    canonical: Astro.url.href
-  };
+  // Выбираем первый доступный конфиг, чтобы не было ошибки, 
+  // но теперь мы будем знать, что поиск не сработал
+  currentConfig = seoConfigs["blog.emailsignatures.xyz"]; 
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
