@@ -2,9 +2,11 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем хост и очищаем его от порта (например, :443) и www.
-const rawHost = Astro.request.headers.get('host') || Astro.url.hostname || '';
-const hostname = rawHost.split(':')[0].replace('www.', '').toLowerCase().trim();
+// 1. Получаем чистый адрес из браузера. 
+// split(':') убирает порт (бывает blog.site.com:443), replace убирает www.
+const host = Astro.request.headers.get('host') || '';
+const hostname = host.split(':')[0].replace('www.', '').toLowerCase().trim();
+
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
@@ -52,25 +54,24 @@ const seoConfigs = {
   }
 };
 
-// 3. Выбираем конфигурацию
-// Сначала пробуем прямое совпадение
+// 3. Выбираем конфигурацию.
+// Мы используем ПРЯМОЙ поиск по ключу. Если в конфиге "blog.fastimageconvert.help", 
+// то и в hostname должно быть "blog.fastimageconvert.help".
 let currentConfig = seoConfigs[hostname];
 
-// Если не нашли (например, hostname — "emailsignatures.xyz", а в ключе "blog.emailsignatures.xyz")
+// Если зашли по адресу без "blog." (например, просто fastimageconvert.help)
 if (!currentConfig) {
-  const matchingKey = Object.keys(seoConfigs).find(key => 
-    hostname === key || hostname === key.replace('blog.', '')
-  );
-  currentConfig = matchingKey ? seoConfigs[matchingKey] : null;
+  currentConfig = seoConfigs["blog." + hostname] || seoConfigs[hostname.replace('blog.', '')];
 }
 
-// Если домен совсем не распознан (локальная разработка или тех. адрес)
+// Если после всех проверок конфиг не найден — МЫ НИЧЕГО НЕ ПОДСТАВЛЯЕМ.
+// Это важно, чтобы один блог не "отравлял" другой.
 if (!currentConfig) {
   currentConfig = {
-    title: "Blog",
-    description: "Expert Guides",
+    title: "Blog Not Found",
+    description: "Please check domain configuration",
     project: "none",
-    canonical: "https://" + hostname
+    canonical: ""
   };
 }
 
