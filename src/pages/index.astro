@@ -1,12 +1,13 @@
 ---
+const hostname = new URL(Astro.request.url).hostname;
 ---
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pure HTML Test</title>
+    <title>Test SSR</title>
 </head>
 <body>
-    <h1>Pure HTML - No Variables</h1>
-    <p>If you see this text, SSR works</p>
+    <h1>SSR Works!</h1>
+    <p>Domain: {hostname}</p>
 </body>
 </html>
