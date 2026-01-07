@@ -9,17 +9,32 @@
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Регистрируем шаблон превью для коллекции "blog"
+    const { h, createClass } = window; // Добавляем переменные для удобства
+
     CMS.registerPreviewTemplate("blog", createClass({
       render: function() {
         const entry = this.props.entry;
         const title = entry.getIn(['data', 'title']);
-        // widgetFor('body') выводит только то, что написано в поле "Текст статьи"
         const body = this.props.widgetFor('body');
+        
+        // Получаем данные картинки и статус галочки
+        const showImage = entry.getIn(['data', 'show_image']);
+        const imageField = this.props.getAsset(entry.getIn(['data', 'image']));
+        const image = imageField ? imageField.toString() : null;
 
-        return h('div', { style: { padding: '20px', fontFamily: 'sans-serif' } },
-          h('h1', { style: { fontSize: '2rem', marginBottom: '10px' } }, title),
+        return h('div', { style: { padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' } },
+          // Заголовок
+          h('h1', { style: { fontSize: '2.5rem', marginBottom: '1rem', fontWeight: '700' } }, title),
+          
+          // Картинка (превью обложки)
+          (showImage && image) ? h('img', { 
+            src: image, 
+            style: { width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '2rem', display: 'block' } 
+          }) : null,
+
           h('hr', { style: { border: '0', borderTop: '1px solid #eee', margin: '20px 0' } }),
+          
+          // Контент статьи
           h('div', { className: 'guide-content' }, body)
         );
       }
