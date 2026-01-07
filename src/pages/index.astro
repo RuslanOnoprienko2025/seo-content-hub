@@ -8,6 +8,9 @@ const hostname = Astro.request.headers.get('cf-connecting-ip') ?
                   Astro.request.headers.get('host')) :
                  Astro.url.hostname;
 
+// Очищаем от портов и пробелов (важно для SSR)
+const hostname = rawHostname ? rawHostname.split(':')[0].split(',')[0].trim() : '';
+
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
   "blog.fastimageconvert.onl": {
