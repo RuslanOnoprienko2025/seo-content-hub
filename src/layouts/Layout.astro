@@ -1,7 +1,7 @@
 ---
 const { title, description, project, image } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
-const favicon = project && project.includes('Signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
+const favicon = project && project.includes('signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
 ---
 <!DOCTYPE html>
 <html lang="ru">
