@@ -1,6 +1,5 @@
 ---
-const { title, description, project, image } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
+const { title, description, project, image, canonical } = Astro.props;
 const favicon = project && project.includes('signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
 ---
 <!DOCTYPE html>
@@ -11,7 +10,7 @@ const favicon = project && project.includes('signatures') ? '/favicon-signatures
     <meta name="google-site-verification" content="ynKjPnkkUnE8fwhHnQRhYLzMFgDHoSjKvCbi0q2oPvc" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL.toString()} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
