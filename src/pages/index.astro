@@ -2,9 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем текущий домен максимально надежным способом
-const host = Astro.request.headers.get('host') || '';
-// Убираем www. и лишние пробелы, чтобы точно совпало с ключами в seoConfigs
+// 1. Получаем текущий хост (из заголовков или системы)
+const host = Astro.request.headers.get('host') || Astro.url.hostname || '';
 const hostname = host.replace('www.', '').toLowerCase().trim();
 
 // 2. Полная карта SEO и проектов (7 доменов)
@@ -53,19 +52,25 @@ const seoConfigs = {
   }
 };
 
-// 3. Улучшенный выбор конфигурации для всех 7 доменов
-const currentHostname = (Astro.request.headers.get('host') || Astro.url.hostname || '').toLowerCase();
+// 3. Выбираем конфигурацию строго (без частичного поиска по подстрокам)
+// Используем прямой поиск по ключу — это единственный способ разделить .help, .pro, .xyz и т.д.
+let currentConfig = seoConfigs[hostname];
 
-// Ищем, какой из наших ключей (доменов) входит в текущий hostname
-const matchingKey = Object.keys(seoConfigs).find(key => currentHostname.includes(key.replace('blog.', '')));
-
-let currentConfig = seoConfigs[matchingKey];
-
-// Если домен все равно не определился (например, на тех. адресе хостинга)
+// Если зашли через технический домен или локально (и нет точного совпадения)
 if (!currentConfig) {
-  // Выбираем первый доступный конфиг, чтобы не было ошибки, 
-  // но теперь мы будем знать, что поиск не сработал
-  currentConfig = seoConfigs["blog.emailsignatures.xyz"]; 
+  // Ищем только если hostname содержит полную строку ключа
+  const matchingKey = Object.keys(seoConfigs).find(key => hostname === key || hostname.endsWith(key));
+  currentConfig = matchingKey ? seoConfigs[matchingKey] : null;
+}
+
+// Если домен не найден — не подставляем подписи! 
+// Оставляем пустой конфиг, чтобы статьи не перемешивались.
+if (!currentConfig) {
+  currentConfig = {
+    title: "Blog",
+    description: "Expert Guides",
+    project: "none"
+  };
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
