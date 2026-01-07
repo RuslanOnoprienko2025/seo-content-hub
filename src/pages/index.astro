@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем домен (чистый и стабильный вариант)
+// 1. Получаем домен
 const forwardedHost = Astro.request.headers.get('x-forwarded-host');
 const hostHeader = Astro.request.headers.get('host');
 const cfIp = Astro.request.headers.get('cf-connecting-ip');
@@ -14,104 +14,91 @@ if (cfIp) {
     rawHostname = Astro.url.hostname;
 }
 
-// Убираем порт и лишние пробелы, чтобы не было ошибки 500
 const hostname = rawHostname ? rawHostname.split(':')[0].trim() : '';
 
-// 2. Полная карта SEO и проектов (7 доменов)
+// 2. Конфиги (все 7)
 const seoConfigs = {
   "blog.fastimageconvert.onl": {
     title: "JPG to WebP Conversion Guide - Optimization Tips",
-    description: "Learn how to convert JPG to WebP for better performance. Expert guides on compression techniques, quality settings, and modern format benefits.",
+    description: "Learn how to convert JPG to WebP for better performance.",
     canonical: "https://blog.fastimageconvert.onl/",
     project: "jpg-to-webp"
   },
   "blog.fastimageconvert.online": {
     title: "WebP Optimization Guide - PNG Compression Tips",
-    description: "Master WebP format for modern websites. Learn compression techniques, transparency handling, and performance optimization for PNG images.",
+    description: "Master WebP format for modern websites.",
     canonical: "https://blog.fastimageconvert.online/",
     project: "png-to-webp"
   },
   "blog.fastimageconvert.xyz": {
     title: "WebP to PNG Guide - Compatibility & Design Tips",
-    description: "Convert WebP to PNG while preserving quality. Expert guides on compatibility, transparency, and professional design workflows.",
+    description: "Convert WebP to PNG while preserving quality.",
     canonical: "https://blog.fastimageconvert.xyz/",
     project: "webp-to-png"
   },
   "blog.fastimageconvert.pro": {
     title: "WebP to JPG Conversion Guide - Compatibility Tips",
-    description: "Learn how to convert WebP to JPG for universal compatibility. Expert guides on quality settings, compression techniques, and device support.",
+    description: "Learn how to convert WebP to JPG for universal compatibility.",
     canonical: "https://blog.fastimageconvert.pro/",
     project: "webp-to-jpg"
   },
   "blog.fastimageconvert.pics": {
     title: "PNG to JPG Guide - Compression & Quality Tips",
-    description: "Learn how to compress PNG to JPG efficiently. Expert guides on quality settings, file size reduction, and choosing the right format for web use.",
+    description: "Learn how to compress PNG to JPG efficiently.",
     canonical: "https://blog.fastimageconvert.pics/",
     project: "png-to-jpg"
   },
   "blog.fastimageconvert.help": {
     title: "PNG Transparency Guide - JPG Conversion Tips",
-    description: "Learn how to add transparency to images by converting JPG to PNG. Expert guides on alpha channels, logo creation, and lossless quality.",
+    description: "Learn how to add transparency to images by converting JPG to PNG.",
     canonical: "https://blog.fastimageconvert.help/",
     project: "jpg-to-png"
   },
   "blog.emailsignatures.xyz": {
     title: "Email Signature Best Practices - Business Tips",
-    description: "Learn email signature best practices for business. Expert guides on formatting, contact details, branding, and professional communication standards.",
+    description: "Learn email signature best practices for business.",
     canonical: "https://blog.emailsignatures.xyz/",
     project: "signatures"
   }
 };
 
-// 3. Прямое сравнение БЕЗ очистки
+// 3. Прямое сравнение
 let currentConfig = seoConfigs[hostname];
 
-// Если не нашли - попробуем убрать www
 if (!currentConfig) {
-  const withoutWww = hostname.replace('www.', '');
-  currentConfig = seoConfigs[withoutWww];
+  currentConfig = {
+    title: "DEBUG MODE - Config Not Found",
+    description: "Debug",
+    canonical: "https://test.com",
+    project: "jpg-to-png"
+  };
 }
 
-// Если всё ещё не нашли - дефолтный конфиг
-if (!currentConfig) {
-  console.error("DEBUG: Hostname not matched. Received:", hostname);
-  currentConfig = seoConfigs["blog.fastimageconvert.help"]; // Дефолтный
-}
-
-// 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
 const allPosts = await getCollection('blog');
-
-// 5. Фильтруем статьи по метке project, которую мы указали в seoConfigs
-const filteredPosts = allPosts.filter(post => post.data.project === currentConfig.project);
-
-// 6. Сортируем статьи по дате (свежие сверху)
-const sortedPosts = filteredPosts.sort((a, b) => 
-  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-);
+const sortedPosts = allPosts.filter(p => p.data.project === currentConfig.project);
 ---
 
 <Layout title={currentConfig.title} description={currentConfig.description} canonical={currentConfig.canonical} project={currentConfig.project} image="">
-  <header style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-    <h1>{currentConfig.title}</h1>
-  </header>
-
-  <section>
-    {sortedPosts.length > 0 ? (
-      sortedPosts.map(post => (
-        <article style="margin-bottom: 30px;">
-          <h2 style="font-size: 1.8rem; margin-bottom: 10px;">
-            <a href={`/${post.slug}`} style="color: #1a1a1a; text-decoration: none;">
-              {post.data.title}
-            </a>
-          </h2>
-          <p style="color: #666;">{post.data.description}</p>
-          <a href={`/${post.slug}`} style="color: #0070f3; font-weight: bold; text-decoration: none;">
-            Read article →
-          </a>
-        </article>
-      ))
-    ) : (
-      <p>Articles for this project are coming soon.</p>
-    )}
-  </section>
+  <div style="background: yellow; padding: 20px; margin: 20px; border: 2px solid red;">
+    <h3>🔍 DEBUG INFO:</h3>
+    <p><strong>hostname:</strong> "{hostname}"</p>
+    <p><strong>forwardedHost:</strong> {forwardedHost || "null"}</p>
+    <p><strong>hostHeader:</strong> {hostHeader || "null"}</p>
+    <p><strong>cfIp:</strong> {cfIp || "null"}</p>
+    <p><strong>rawHostname:</strong> "{rawHostname}"</p>
+    <p><strong>Config found:</strong> {seoConfigs[hostname] ? "✅ YES" : "❌ NO"}</p>
+  </div>
+  
+  <h1>{currentConfig.title}</h1>
+  <p>Posts found: {sortedPosts.length}</p>
+  
+  {sortedPosts.length > 0 ? (
+    sortedPosts.slice(0, 3).map(post => (
+      <article style="margin-bottom: 20px;">
+        <h2>{post.data.title}</h2>
+      </article>
+    ))
+  ) : (
+    <p>No articles found</p>
+  )}
 </Layout>
