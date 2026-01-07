@@ -2,12 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Пытаемся получить домен всеми возможными способами
-const currentUrlHost = Astro.url.hostname || '';
-const requestHost = Astro.request.headers.get('host') || '';
-// Берем то, что не пустое, и очищаем от порта и www
-const rawHost = (requestHost || currentUrlHost).split(':')[0];
-const hostname = rawHost.replace('www.', '').toLowerCase().trim();
+// 1. Получаем домен из URL (это работает всегда, даже если сервер не передает заголовки)
+const hostname = Astro.url.hostname.replace('www.', '').toLowerCase().trim();
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
@@ -55,25 +51,26 @@ const seoConfigs = {
   }
 };
 
-// 3. Умный поиск по конфигу
+// 3. Прямой и точный поиск
+// Мы сравниваем чистый хост (например, fastimageconvert.help) 
+// с ключами в конфиге, убирая "blog." для страховки.
 const matchingKey = Object.keys(seoConfigs).find(key => {
-  const cleanKey = key.replace('blog.', '').replace('www.', '');
-  const cleanHost = hostname.replace('blog.', '').replace('www.', '');
-  return cleanKey === cleanHost && cleanHost !== '';
+  const cleanKey = key.replace('blog.', '').toLowerCase();
+  const cleanHost = hostname.replace('blog.', '').toLowerCase();
+  return cleanKey === cleanHost;
 });
 
 let currentConfig = seoConfigs[matchingKey];
 
-// Если зашли по IP или локально, и ничего не нашли — берем первый по списку (для теста)
+// Если зашли по адресу, которого нет в списке (или на тех. домен хостинга)
 if (!currentConfig) {
-    // Временно выводим имя хоста в заголовок, чтобы ТЫ его увидел, если опять будет Not Found
-    const debugName = hostname || "empty-host";
-    currentConfig = {
-        title: "Debug: " + debugName,
-        description: "Checking domain",
-        project: "none",
-        canonical: ""
-    };
+  // Выводим данные для отладки, чтобы понять, что видит Astro.url
+  currentConfig = {
+    title: "Domain detected: " + hostname,
+    description: "Please add this domain to seoConfigs",
+    project: "none",
+    canonical: "https://" + hostname
+  };
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
