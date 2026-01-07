@@ -2,9 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем хост максимально надежно для Cloudflare
-const host = Astro.request.headers.get('host') || '';
-const hostname = host.replace('www.', '').toLowerCase().trim();
+// 1. Получаем домен
+const hostname = Astro.request.headers.get('host') || '';
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
