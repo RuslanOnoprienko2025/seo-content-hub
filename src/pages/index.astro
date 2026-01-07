@@ -2,11 +2,12 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// 1. Получаем чистый адрес из браузера. 
-// split(':') убирает порт (бывает blog.site.com:443), replace убирает www.
-const host = Astro.request.headers.get('host') || '';
-const hostname = host.split(':')[0].replace('www.', '').toLowerCase().trim();
-
+// 1. Пытаемся получить домен всеми возможными способами
+const currentUrlHost = Astro.url.hostname || '';
+const requestHost = Astro.request.headers.get('host') || '';
+// Берем то, что не пустое, и очищаем от порта и www
+const rawHost = (requestHost || currentUrlHost).split(':')[0];
+const hostname = rawHost.replace('www.', '').toLowerCase().trim();
 
 // 2. Полная карта SEO и проектов (7 доменов)
 const seoConfigs = {
@@ -54,26 +55,25 @@ const seoConfigs = {
   }
 };
 
-// 3. Универсальный поиск конфигурации
-const currentHostname = hostname; // то, что пришло из браузера
-
+// 3. Умный поиск по конфигу
 const matchingKey = Object.keys(seoConfigs).find(key => {
-  // Очищаем и ключ, и текущий хост от 'blog.' и 'www.' для сравнения
   const cleanKey = key.replace('blog.', '').replace('www.', '');
-  const cleanHost = currentHostname.replace('blog.', '').replace('www.', '');
-  return cleanKey === cleanHost;
+  const cleanHost = hostname.replace('blog.', '').replace('www.', '');
+  return cleanKey === cleanHost && cleanHost !== '';
 });
 
 let currentConfig = seoConfigs[matchingKey];
 
-// Если домен все равно не найден (для отладки)
+// Если зашли по IP или локально, и ничего не нашли — берем первый по списку (для теста)
 if (!currentConfig) {
-  currentConfig = {
-    title: "Not Found: " + currentHostname, 
-    description: "Check your seoConfigs keys",
-    project: "none",
-    canonical: ""
-  };
+    // Временно выводим имя хоста в заголовок, чтобы ТЫ его увидел, если опять будет Not Found
+    const debugName = hostname || "empty-host";
+    currentConfig = {
+        title: "Debug: " + debugName,
+        description: "Checking domain",
+        project: "none",
+        canonical: ""
+    };
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
