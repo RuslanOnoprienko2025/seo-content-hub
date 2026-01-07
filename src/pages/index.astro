@@ -55,23 +55,31 @@ const seoConfigs = {
 };
 
 // 3. Выбираем конфигурацию
-const getCleanHost = (str) => str.replace('blog.', '').replace('www.', '').toLowerCase().trim();
+const getCleanHost = (str) => {
+  if (!str) return '';
+  return str
+    .split(':')[0]           // Отрезаем порт (:443), если он есть
+    .replace('www.', '')     // Убираем www
+    .replace('blog.', '')    // Убираем blog
+    .toLowerCase()
+    .trim();
+};
 
-// Очищаем текущий хост от порта (если он есть) и лишних пробелов
-const currentHostnameClean = getCleanHost(hostname.split(':')[0]);
+const currentHostnameClean = getCleanHost(hostname);
 
-// Ищем ключ, используя includes (это надежнее на серверах)
-const matchingKey = Object.keys(seoConfigs).find(key => {
-  const cleanKey = getCleanHost(key);
-  return currentHostnameClean.includes(cleanKey) || cleanKey.includes(currentHostnameClean);
-});
+// Ищем ключ
+const matchingKey = Object.keys(seoConfigs).find(key => 
+  getCleanHost(key) === currentHostnameClean
+);
 
 let currentConfig = seoConfigs[matchingKey];
 
-// Если домен всё равно не найден (защита от падения 500)
+// КРИТИЧЕСКИЙ МОМЕНТ ДЛЯ СТАБИЛЬНОСТИ:
 if (!currentConfig) {
-  console.error("Domain not found:", hostname); // Это появится в логах Cloudflare
-  currentConfig = seoConfigs["blog.fastimageconvert.onl"]; // Берем один как базу, чтобы не было [object Object]
+  // Если домен не найден, берем первый попавшийся, чтобы сайт НЕ ПАДАЛ в [object Object]
+  // Но в консоль выводим ошибку, чтобы ты видел, какой хост пришел
+  console.error("DEBUG: Hostname not matched. Received:", hostname, "Cleaned as:", currentHostnameClean);
+  currentConfig = Object.values(seoConfigs)[0]; 
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
