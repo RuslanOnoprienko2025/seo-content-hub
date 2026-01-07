@@ -4,9 +4,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    routes: {
-      strategy: 'include',
-      include: ['/*']
-    }
+    imageService: 'passthrough'
   })
 });
