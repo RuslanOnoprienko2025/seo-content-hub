@@ -54,22 +54,23 @@ const seoConfigs = {
   }
 };
 
-// 3. Выбираем конфигурацию.
-// Мы используем ПРЯМОЙ поиск по ключу. Если в конфиге "blog.fastimageconvert.help", 
-// то и в hostname должно быть "blog.fastimageconvert.help".
-let currentConfig = seoConfigs[hostname];
+// 3. Универсальный поиск конфигурации
+const currentHostname = hostname; // то, что пришло из браузера
 
-// Если зашли по адресу без "blog." (например, просто fastimageconvert.help)
-if (!currentConfig) {
-  currentConfig = seoConfigs["blog." + hostname] || seoConfigs[hostname.replace('blog.', '')];
-}
+const matchingKey = Object.keys(seoConfigs).find(key => {
+  // Очищаем и ключ, и текущий хост от 'blog.' и 'www.' для сравнения
+  const cleanKey = key.replace('blog.', '').replace('www.', '');
+  const cleanHost = currentHostname.replace('blog.', '').replace('www.', '');
+  return cleanKey === cleanHost;
+});
 
-// Если после всех проверок конфиг не найден — МЫ НИЧЕГО НЕ ПОДСТАВЛЯЕМ.
-// Это важно, чтобы один блог не "отравлял" другой.
+let currentConfig = seoConfigs[matchingKey];
+
+// Если домен все равно не найден (для отладки)
 if (!currentConfig) {
   currentConfig = {
-    title: "Blog Not Found",
-    description: "Please check domain configuration",
+    title: "Not Found: " + currentHostname, 
+    description: "Check your seoConfigs keys",
     project: "none",
     canonical: ""
   };
