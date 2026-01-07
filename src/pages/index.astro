@@ -74,10 +74,6 @@ if (!currentConfig) {
     project: "none",
     canonical: "https://" + hostname
   };
-
-// После создания currentConfig, перед await getCollection
-if (!currentConfig) {
-  throw new Error(`Config not found for hostname: ${hostname}`);
 }
 
 // 4. Получаем все статьи из папки src/content/blog/ (как в твоем исходном коде)
