@@ -10,4 +10,6 @@ export default defineConfig({
     // Добавь это:
     runtime: { mode: 'compatibility', type: 'pages' }
   }),
+  // Добавь это, чтобы Astro не конфликтовал со слэшами в конце URL
+  trailingSlash: 'always'
 });
