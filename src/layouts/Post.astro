@@ -3,7 +3,7 @@ import Layout from './Layout.astro';
 const { title, seo_title, description, image, show_image, date, project } = Astro.props;
 const content = { title, seo_title, description, image, show_image, date, project };
 ---
-<Layout title={content.seo_title || content.title} description={content.description} image={content.image}>
+<Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
     <article>
         <header style="margin-bottom: 3rem;">
             <h1>{content.title}</h1>
