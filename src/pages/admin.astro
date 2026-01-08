@@ -1,5 +1,4 @@
 ---
-// src/pages/admin.astro
 export const partial = true;
 ---
 <!doctype html>
@@ -8,44 +7,22 @@ export const partial = true;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script is:inline src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script is:inline>
-    const initPreview = () => {
+    function startCMS() {
       if (window.CMS) {
-        const { h, createClass } = window;
-        
-        CMS.registerPreviewTemplate("blog", createClass({
-          render: function() {
-            const entry = this.props.entry;
-            const title = entry.getIn(['data', 'title']);
-            const body = this.props.widgetFor('body');
-            
-            const showImage = entry.getIn(['data', 'show_image']);
-            const imageField = this.props.getAsset(entry.getIn(['data', 'image']));
-            const image = imageField ? imageField.toString() : null;
-
-            return h('div', { style: { padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' } },
-              h('h1', { style: { fontSize: '2.5rem', marginBottom: '1rem', fontWeight: '700' } }, title),
-              (showImage && image) ? h('img', { 
-                src: image, 
-                style: { width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '2rem', display: 'block' } 
-              }) : null,
-              h('hr', { style: { border: '0', borderTop: '1px solid #eee', margin: '20px 0' } }),
-              h('div', { className: 'guide-content' }, body)
-            );
-          }
-        }));
+        console.log('CMS Ready');
+        // Пока просто инициализируем, без кастомного шаблона, чтобы проверить вход
       } else {
-        // Если CMS еще не готова, подождем 100мс и попробуем снова
-        setTimeout(initPreview, 100);
+        console.log('Waiting for CMS...');
+        setTimeout(startCMS, 500);
       }
-    };
-
-    initPreview();
+    }
+    startCMS();
   </script>
 </body>
 </html>
