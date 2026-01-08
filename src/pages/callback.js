@@ -1,13 +1,12 @@
-export const GET = async (context) => {
-  const url = new URL(context.request.url);
-  const code = url.searchParams.get("code");
+  export const GET = async ({ url, locals }) => {
+  const code = url.searchParams.get('code');
+  const runtime = locals.runtime;
   
-  const client_id = import.meta.env.GITHUB_CLIENT_ID;
-  const client_secret = import.meta.env.GITHUB_CLIENT_SECRET;
-  
-  if (!client_id || !client_secret) {
-    return new Response("Error: GitHub credentials not configured", { status: 500 });
-  }
+  const client_id = runtime.env.GITHUB_CLIENT_ID;
+  const client_secret = runtime.env.GITHUB_CLIENT_SECRET;
+
+  // ... дальше ваш код запроса к GitHub (fetch), использующий эти переменные
+}
   
   const response = await fetch("https://github.com/login/oauth/access_token", {
     method: "POST",
