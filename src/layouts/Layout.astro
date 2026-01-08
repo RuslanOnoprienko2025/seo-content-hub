@@ -1,22 +1,27 @@
 ---
-const { title, description, project, image, canonical } = Astro.props;
+const { title, description, project, image } = Astro.props;
 const favicon = project && project.includes('signatures') ? '/favicon-signatures.svg' : '/favicon-converters.svg';
+
+// Определяем технический домен и генерируем canonical
+const hostname = Astro.url.hostname;
+const isPagesDev = hostname.includes('.pages.dev');
+const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {isPagesDev && <meta name="robots" content="noindex, nofollow" />}
     <meta name="google-site-verification" content="ynKjPnkkUnE8fwhHnQRhYLzMFgDHoSjKvCbi0q2oPvc" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {!isPagesDev && <link rel="canonical" href={canonicalURL} />}
     <link rel="icon" type="image/svg+xml" href={favicon} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style is:global>
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -27,13 +32,11 @@ const favicon = project && project.includes('signatures') ? '/favicon-signatures
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-
         h1 { 
             font-size: 2.5rem; 
             font-weight: 700; 
@@ -42,14 +45,12 @@ const favicon = project && project.includes('signatures') ? '/favicon-signatures
             color: #000;
             letter-spacing: -0.02em;
         }
-
         .prose h2 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
         }
-
         img {
             max-width: 100%;
             height: auto;
@@ -58,29 +59,24 @@ const favicon = project && project.includes('signatures') ? '/favicon-signatures
             border: 1px solid #eee;
             border-radius: 4px;
         }
-
         .prose a {
             color: #0070f3;
             text-decoration: underline;
             text-underline-offset: 3px;
         }
-
         .prose a:hover {
             color: #0051ad;
         }
-
         .prose p { margin-bottom: 1.25rem; }
-
-        /* ИСПРАВЛЕНИЕ ЧЕРНЫХ ПЛАШЕК: */
         pre {
-            background-color: #f6f8fa !important; /* Светлый фон */
+            background-color: #f6f8fa !important;
             padding: 1rem;
             border-radius: 6px;
             border: 1px solid #eee;
             overflow-x: auto;
         }
         code {
-            color: #24292e !important; /* Темный текст */
+            color: #24292e !important;
             font-size: 0.9em;
         }
     </style>
