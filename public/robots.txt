@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Указываем основные домены (для каждого блога свой)
+# Google будет индексировать тот домен, который открыт
+Sitemap: https://blog.fastimageconvert.onl/sitemap.xml
+Sitemap: https://blog.fastimageconvert.online/sitemap.xml
+Sitemap: https://blog.fastimageconvert.xyz/sitemap.xml
+Sitemap: https://blog.fastimageconvert.pro/sitemap.xml
+Sitemap: https://blog.fastimageconvert.pics/sitemap.xml
+Sitemap: https://blog.fastimageconvert.help/sitemap.xml
+Sitemap: https://blog.emailsignatures.xyz/sitemap.xml
