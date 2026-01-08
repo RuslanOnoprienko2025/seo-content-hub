@@ -1,13 +1,16 @@
-  export const GET = async ({ url, locals }) => {
+export const GET = async ({ url, locals }) => {
   const code = url.searchParams.get('code');
+  
+  // Безопасно достаем переменные из окружения Cloudflare
   const runtime = locals.runtime;
-  
-  const client_id = runtime.env.GITHUB_CLIENT_ID;
-  const client_secret = runtime.env.GITHUB_CLIENT_SECRET;
+  const client_id = runtime?.env?.GITHUB_CLIENT_ID;
+  const client_secret = runtime?.env?.GITHUB_CLIENT_SECRET;
 
-  // ... дальше ваш код запроса к GitHub (fetch), использующий эти переменные
-}
-  
+  if (!code || !client_id || !client_secret) {
+    return new Response("Missing parameters or environment variables", { status: 400 });
+  }
+
+  // Запрос к GitHub для обмена кода на токен
   const response = await fetch("https://github.com/login/oauth/access_token", {
     method: "POST",
     headers: {
@@ -21,13 +24,14 @@
       code,
     }),
   });
-  
+
   const result = await response.json();
-  
+
   if (result.error) {
     return new Response(JSON.stringify(result), { status: 400 });
   }
-  
+
+  // Этот HTML-скрипт передает токен обратно в окно админки
   return new Response(
     `<html><body><script>
     (function() {
