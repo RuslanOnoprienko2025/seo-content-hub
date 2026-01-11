@@ -5,7 +5,11 @@ const favicon = project && project.includes('signatures') ? '/favicon-signatures
 // Определяем технический домен и генерируем canonical
 const hostname = Astro.url.hostname;
 const isPagesDev = hostname.includes('.pages.dev');
-const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin);
+
+// Исправляем путь: всегда добавляем слэш в конец
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+const canonicalURL = new URL(cleanPath, Astro.url.origin);
 ---
 <!DOCTYPE html>
 <html lang="en">
