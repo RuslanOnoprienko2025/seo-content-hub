@@ -3,6 +3,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   output: 'server',
+  trailingSlash: 'always', // Добавляем это для единого стандарта ссылок
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
