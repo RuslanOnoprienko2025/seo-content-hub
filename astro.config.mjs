@@ -4,6 +4,9 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   output: 'server',
   trailingSlash: 'always', // Добавляем это для единого стандарта ссылок
+  build: {
+    format: 'directory',    // Добавьте эту строку
+  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
