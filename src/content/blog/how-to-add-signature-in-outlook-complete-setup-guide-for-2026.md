@@ -3,7 +3,7 @@ title: "How to Add Signature in Outlook: Complete Setup Guide for 2026"
 date: 2026-01-13T02:07:00.000+02:00
 layout: ../../layouts/Guide.astro
 image: /images/outlook-guide.png
-show_image: true
+show_image: false
 seo_title: "Microsoft Outlook Signature: Configuration & Setup Tutorial"
 description: >
   Step-by-step guide on setting up email signatures in Outlook desktop, web, and
