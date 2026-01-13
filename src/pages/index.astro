@@ -95,23 +95,53 @@ const sortedPosts = filteredPosts.sort((a, b) =>
     <h1>{currentConfig.title}</h1>
   </header>
 
-  <section>
-    {sortedPosts.length > 0 ? (
-      sortedPosts.map(post => (
-        <article style="margin-bottom: 30px;">
-          <h2 style="font-size: 1.8rem; margin-bottom: 10px;">
-            <a href={`/${post.slug}/`} style="color: #1a1a1a; text-decoration: none;">
-              {post.data.title}
-            </a>
-          </h2>
-          <p style="color: #666;">{post.data.description}</p>
-          <a href={`/${post.slug}/`} style="color: #0070f3; font-weight: bold; text-decoration: none;">
-            Read article →
+  <style>
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .post-card {
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .post-card h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem;
+  }
+  .post-card p {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<section class="posts-grid">
+  {sortedPosts.length > 0 ? (
+    sortedPosts.map(post => (
+      <article class="post-card">
+        <h2>
+          <a href={`/${post.slug}/`} style="color: #1a1a1a; text-decoration: none;">
+            {post.data.title}
           </a>
-        </article>
-      ))
-    ) : (
-      <p>Articles for this project are coming soon.</p>
-    )}
-  </section>
+        </h2>
+        <p>{post.data.description}</p>
+        <a href={`/${post.slug}/`} style="color: #0070f3; font-weight: bold; text-decoration: none; margin-top: 1rem; font-size: 0.9rem;">
+          Read article →
+        </a>
+      </article>
+    ))
+  ) : (
+    <p>Articles for this project are coming soon.</p>
+  )}
+</section>
 </Layout>
