@@ -106,7 +106,7 @@ The name draws the eye first, the title provides context, and contact methods ar
 
 ### Step 4: Build Your Signature
 
-This is where **making an email signature** becomes either simple or complicated, depending on the approach taken.
+This is where making an email signature becomes either simple or complicated, depending on the approach taken.
 
 **Option A: Manual Creation**
 
