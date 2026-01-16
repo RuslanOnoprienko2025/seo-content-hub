@@ -50,7 +50,7 @@ The editor panel becomes available in the middle section of the window. This is 
 Utilize the formatting toolbar positioned above the text area. This toolbar enables basic text formatting, bold or italic styling, font selection, and color application. Type your content directly: name, professional title, company affiliation, phone number, email address, website.
 
 **Method B: HTML paste approach**  
-For content generated using a **create signature outlook** tool or professional generator, paste the HTML code directly into the editor. The application recognizes HTML formatting and renders it appropriately. To paste without introducing formatting conflicts, use Ctrl+Shift+V (paste without formatting).
+For content generated using a create signature outlook tool or professional generator, paste the HTML code directly into the editor. The application recognizes HTML formatting and renders it appropriately. To paste without introducing formatting conflicts, use Ctrl+Shift+V (paste without formatting).
 
 Maintain minimal complexity—while the desktop version supports more advanced formatting than web variants, simpler footers display more reliably across different email clients.
 
