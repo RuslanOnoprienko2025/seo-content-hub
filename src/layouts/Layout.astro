@@ -26,64 +26,90 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style is:global>
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #1a1a1a;
-            background-color: #ffffff;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 { 
-            font-size: 2.5rem; 
-            font-weight: 700; 
-            line-height: 1.2; 
-            margin-bottom: 1.5rem;
-            color: #000;
-            letter-spacing: -0.02em;
-        }
-        .prose h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 2.5rem;
+<style is:global>
+    body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #1a1a1a;
+        background-color: #ffffff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* Базовый заголовок для десктопа */
+    h1 { 
+        font-size: 2.5rem; 
+        font-weight: 700; 
+        line-height: 1.2; 
+        margin-bottom: 1.5rem;
+        color: #000;
+        letter-spacing: -0.02em;
+        /* Предотвращает выезд длинных слов за край экрана */
+        overflow-wrap: break-word;
+    }
+
+    /* Адаптация для мобильных устройств (смартфоны) */
+    @media (max-width: 640px) {
+        h1 {
+            font-size: 1.75rem; /* Значительно меньше для мобилок */
+            line-height: 1.25;
             margin-bottom: 1rem;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 2rem 0;
-            border: 1px solid #eee;
-            border-radius: 4px;
+        .container {
+            padding: 20px 15px; /* Уменьшаем отступы контейнера, чтобы контенту было просторнее */
         }
-        .prose a {
-            color: #0070f3;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+    }
+
+    .prose h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Уменьшаем и H2 на мобилках для гармонии */
+    @media (max-width: 640px) {
+        .prose h2 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
         }
-        .prose a:hover {
-            color: #0051ad;
-        }
-        .prose p { margin-bottom: 1.25rem; }
-        pre {
-            background-color: #f6f8fa !important;
-            padding: 1rem;
-            border-radius: 6px;
-            border: 1px solid #eee;
-            overflow-x: auto;
-        }
-        code {
-            color: #24292e !important;
-            font-size: 0.9em;
-        }
-    </style>
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 2rem 0;
+        border: 1px solid #eee;
+        border-radius: 4px;
+    }
+    .prose a {
+        color: #0070f3;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    .prose a:hover {
+        color: #0051ad;
+    }
+    .prose p { margin-bottom: 1.25rem; }
+    pre {
+        background-color: #f6f8fa !important;
+        padding: 1rem;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        overflow-x: auto;
+    }
+    code {
+        color: #24292e !important;
+        font-size: 0.9em;
+    }
+</style>
 </head>
 <body>
     <main class="container">
