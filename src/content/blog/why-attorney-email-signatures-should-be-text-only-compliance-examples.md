@@ -16,7 +16,7 @@ In the legal industry, professionalism is defined not by visual design, but by r
 
 Text-only email signatures work better for attorneys: they're compatible with all systems, appear professional in the legal environment, and allow you to include all necessary legal credentials without visual clutter.
 
-If you want to create a professional, text-only **[attorney email signature](https://emailsignatures.xyz)** that works across all platforms, you can generate one in under five minutes.
+If you want to create a professional, text-only **[attorney email signature](https://www.emailsignatures.xyz)** that works across all platforms, you can generate one in under five minutes.
 
 ## Why Common Email Signature Advice Doesn't Work for Attorneys
 
@@ -142,7 +142,7 @@ sterlinglegal.com
 
 **Best for:** Law firm attorneys, compact professional format, streamlined communications.
 
-These formats are exactly what a **[professional email signature generator for attorneys](https://emailsignatures.xyz)** produces—text-only, compliant, and universally compatible.
+These formats are exactly what a **[professional email signature generator for attorneys](https://www.emailsignatures.xyz)** produces—text-only, compliant, and universally compatible.
 
 ## Why Text-Only Signatures Work Better for Legal Professionals
 
