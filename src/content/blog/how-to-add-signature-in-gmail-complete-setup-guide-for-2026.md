@@ -24,7 +24,7 @@ The platform delivers one particularly convenient benefit: configure your footer
 
 ## Gmail Signature Setup on Desktop
 
-Already have your email footer prepared? **[Professional generators](https://emailsignatures.xyz)** output Gmail-compatible code within five minutes—then simply execute these installation steps.
+Already have your email footer prepared? **[Professional generators](https://www.emailsignatures.xyz)** output Gmail-compatible code within five minutes—then simply execute these installation steps.
 
 Desktop serves as your primary configuration environment. Complete setup here once, and you're operational everywhere.
 
@@ -238,4 +238,4 @@ Desktop configuration automatically functions on mobile. Mobile-only versions ar
 
 Maintain email footers simple—text exclusively, six essential information pieces, minimal formatting. Update when your information changes. Verify before dispatching to important contacts.
 
-Ready to implement a professional sign-off? **[Create your signature now](https://emailsignatures.xyz)**—obtain Gmail-compatible code that functions everywhere, then install it using the steps outlined above.
+Ready to implement a professional sign-off? **[Create your signature now](https://www.emailsignatures.xyz)**—obtain Gmail-compatible code that functions everywhere, then install it using the steps outlined above.
