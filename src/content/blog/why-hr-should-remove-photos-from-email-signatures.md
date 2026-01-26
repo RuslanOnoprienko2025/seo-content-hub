@@ -27,7 +27,7 @@ Through testing thousands of outreach campaigns, six email signature components 
 - Primary email address for easy forwarding
 - Clean, text-based link to your company website
 
-Nothing more is needed. This is exactly the structure you can create with the **[professional email signature generator for recruiters](https://emailsignatures.xyz)**, producing a clean, text-only HR email signaturein under five minutes.
+Nothing more is needed. This is exactly the structure you can create with the **[professional email signature generator for recruiters](https://www.emailsignatures.xyz)**, producing a clean, text-only HR email signaturein under five minutes.
 
 ## Why These Six Elements Work
 
@@ -63,7 +63,7 @@ James worked for a Fortune 500 bank and was struggling to engage passive candida
 
 Maya ran talent acquisition for a 50-person startup. She'd been using animated GIFs in her signature to "stand out." Her emails were landing in spam 60% of the time—she discovered this by asking candidates directly. After removing all images and switching to plain text, her inbox placement rate jumped to 94%.
 
-These results are exactly what happens when recruiters switch to text-only signatures using a **[professional email signature generator for recruiters](https://emailsignatures.xyz)**—better deliverability, higher response rates, and more candidates actually seeing your outreach.
+These results are exactly what happens when recruiters switch to text-only signatures using a **[professional email signature generator for recruiters](https://www.emailsignatures.xyz)**—better deliverability, higher response rates, and more candidates actually seeing your outreach.
 
 ## Email Signature Content: The Minimalist Standard
 
