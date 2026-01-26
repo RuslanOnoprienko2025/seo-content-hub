@@ -16,7 +16,7 @@ The solution is simple: clean, text-based contact blocks formatted consistently 
 
 This guide explains what works for high-volume cold outreach, provides role-specific examples, covers automation setup, and shows how to maintain compliance with deliverability standards.
 
-Create a **[professional sales email signature](https://emailsignatures.xyz)** optimized for inbox placement in under five minutes.
+Create a **[professional sales email signature](https://www.emailsignatures.xyz)** optimized for inbox placement in under five minutes.
 
 ## What Makes a Professional Sales Email Signature Effective
 
@@ -135,7 +135,7 @@ salespro.com
 **Note for Sales Managers:**
 A sales manager email signature typically emphasizes authority over volume outreach, but identical text-only principles apply.
 
-Generate these formats instantly with an **[email signature generator for sales](https://emailsignatures.xyz)**—deliverability-optimized and ready in 5 minutes.
+Generate these formats instantly with an **[email signature generator for sales](https://www.emailsignatures.xyz)**—deliverability-optimized and ready in 5 minutes.
 
 ## Email Signature Generator for Sales Teams
 
@@ -231,4 +231,4 @@ Effective sales professional signature design prioritizes deliverability over vi
 
 Modern professional sales signature design in B2B means clean, text-only contact information. Every sales professional signature should prioritize inbox placement above all else.
 
-Create a **[professional sales email signature](https://emailsignatures.xyz)** optimized for B2B outreach in under 5 minutes.
+Create a **[professional sales email signature](https://www.emailsignatures.xyz)** optimized for B2B outreach in under 5 minutes.
