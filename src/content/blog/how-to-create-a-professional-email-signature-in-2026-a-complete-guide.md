@@ -16,7 +16,7 @@ In 2026, learning how to create email signature that's both professional and tec
 
 Whether building a first professional signature or updating an existing one, this tutorial covers the technical requirements, design principles, and implementation steps that separate effective signatures from amateur ones.
 
-For those who want to skip the technical complexity and get a working signature immediately, **[professional signature generators](https://emailsignatures.xyz)** handle all the technical details automatically—but understanding the principles behind effective signatures helps make informed decisions about what works and why.
+For those who want to skip the technical complexity and get a working signature immediately, **[professional signature generators](https://www.emailsignatures.xyz)** handle all the technical details automatically—but understanding the principles behind effective signatures helps make informed decisions about what works and why.
 
 ## Why Your Email Signature Matters
 
@@ -325,4 +325,4 @@ Most importantly, understand that signatures aren't about impressing people with
 
 The choice between spending hours learning email HTML quirks or spending five minutes using a tool designed specifically for this purpose is straightforward. Both approaches can work, but one respects time while delivering professional results.
 
-Ready to create professional email signature that actually works? **[Create your signature now](https://emailsignatures.xyz)**—no technical knowledge required, no trial and error, just clean, professional results that work everywhere.
+Ready to create professional email signature that actually works? **[Create your signature now](https://www.emailsignatures.xyz)**—no technical knowledge required, no trial and error, just clean, professional results that work everywhere.
