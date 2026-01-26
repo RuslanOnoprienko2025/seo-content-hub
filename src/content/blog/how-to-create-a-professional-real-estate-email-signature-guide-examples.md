@@ -14,7 +14,7 @@ Real estate professionals send hundreds of emails weekly—property listings, cl
 
 This comprehensive guide walks through creating an effective real estate email signature that builds credibility, maintains compliance, and converts prospects. Whether you're an independent agent, broker associate, or team lead, you'll learn what components matter, which mistakes to avoid, and how minimalist design actually increases your response rates.
 
-If you want to skip manual setup, you can **[generate a clean, compliant real estate email signature in minutes](https://emailsignatures.xyz)** using a professional generator.
+If you want to skip manual setup, you can **[generate a clean, compliant real estate email signature in minutes](https://www.emailsignatures.xyz)** using a professional generator.
 
 ## Why Real Estate Agents Need Professional Email Signatures
 
@@ -166,7 +166,7 @@ prestigerealty.com
 
 **Best for:** Luxury market agents, experienced professionals with multiple advanced certifications, agents who send high-volume correspondence where space efficiency matters, professionals targeting sophisticated clientele.
 
-These formats are exactly what a **[professional real estate email signature generator](https://emailsignatures.xyz)** produces—text-only, compliant, and mobile-ready.
+These formats are exactly what a **[professional real estate email signature generator](https://www.emailsignatures.xyz)** produces—text-only, compliant, and mobile-ready.
 
 ### Example 3: Commercial Real Estate Broker (Inline Format)
 
@@ -337,4 +337,4 @@ Creating an effective real estate email signature prioritizes function over flas
 
 Your email signature represents the final impression on every message you send. In competitive real estate markets where dozens of agents pursue the same leads, professional details determine whether prospects remember you or move to the next name in their inbox.
 
-**[Create a clean real estate email signature that actually gets replies](https://emailsignatures.xyz)** →
+**[Create a clean real estate email signature that actually gets replies](https://www.emailsignatures.xyz)** →
