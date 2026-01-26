@@ -26,7 +26,7 @@ The platform offers one significant advantage: once configured properly, your fo
 
 ## Outlook Signature Setup (Desktop Version)
 
-Already have your email footer prepared? **[Professional generators](https://emailsignatures.xyz)** output compatible code within five minutes—then simply execute these installation steps for the desktop application.
+Already have your email footer prepared? **[Professional generators](https://www.emailsignatures.xyz)** output compatible code within five minutes—then simply execute these installation steps for the desktop application.
 
 The desktop client serves as the primary configuration environment for most corporate users. Complete setup here for the application you use most frequently.
 
@@ -74,7 +74,7 @@ Compose a new email message to verify your footer displays correctly. Send a tes
 
 The web-based interface (accessible through outlook.office.com or outlook.live.com) requires completely separate configuration. Settings configured in the desktop application don't automatically transfer to the web interface.
 
-Already have your email footer ready? **[Professional generators](https://emailsignatures.xyz)** create code compatible with both desktop and web versions—then follow these steps for web implementation.
+Already have your email footer ready? **[Professional generators](https://www.emailsignatures.xyz)** create code compatible with both desktop and web versions—then follow these steps for web implementation.
 
 ### Step 1: Access Web Settings
 
@@ -136,7 +136,7 @@ If multiple email accounts are configured in the desktop version, assign differe
 
 ## Common Issues and Solutions
 
-Despite careful configuration, **outlook signature settings** complications occasionally surface. Here are frequent problems with their resolutions.
+Despite careful configuration, outlook signature settings complications occasionally surface. Here are frequent problems with their resolutions.
 
 ### Issue 1: Footer Doesn't Appear in Sent Messages
 
