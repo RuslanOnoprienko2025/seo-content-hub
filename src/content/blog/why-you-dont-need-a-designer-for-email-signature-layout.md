@@ -1,7 +1,7 @@
 ---
 title: Why You Don't Need a Designer for Email Signature Layout
 date: 2026-01-29T11:23:00.000+02:00
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/Post.astro
 image: /images/email-signature-layout.png
 show_image: true
 seo_title: "Email Signature Layout: Online Tools vs Designer Work"
