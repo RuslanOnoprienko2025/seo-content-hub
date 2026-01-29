@@ -1,18 +1,23 @@
 ---
 import Layout from './Layout.astro';
-const { title, seo_title, description, image, show_image, date, project } = Astro.props;
-const content = { title, seo_title, description, image, show_image, date, project };
+const { frontmatter } = Astro.props;
+const content = frontmatter || Astro.props;
 ---
+
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
     <article>
-        <header style="margin-bottom: 3rem;">
+        <header style="margin-bottom: 2rem;">
             <h1>{content.title}</h1>
-            <p style="color: var(--text-light); font-size: 1rem;">
-                {content.date && new Date(content.date).toLocaleDateString('ru-RU', {day: 'numeric', month: 'long', year: 'numeric'})}
-            </p>
         </header>
 
-        {content.image && content.show_image && <img src={content.image} alt={content.title} />}
+        {content.image && content.show_image && (
+          <img 
+            src={content.image} 
+            alt={content.title} 
+            style="width: 100%; height: auto; border-radius: 12px; margin: 0 0 2rem 0; display: block;" 
+          />
+        )}
 
-        <slot /> </article>
+        <slot /> 
+    </article>
 </Layout>
