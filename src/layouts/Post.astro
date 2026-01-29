@@ -1,23 +1,22 @@
 ---
 import Layout from './Layout.astro';
-const { frontmatter } = Astro.props;
-const content = frontmatter || Astro.props;
+const { title, seo_title, description, image, show_image, project } = Astro.props;
+const content = { title, seo_title, description, image, show_image, project };
 ---
-
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
     <article>
-        <header style="margin-bottom: 2rem;">
-            <h1>{content.title}</h1>
-        </header>
+        <h1>{content.title}</h1>
 
         {content.image && content.show_image && (
           <img 
             src={content.image} 
             alt={content.title} 
-            style="width: 100%; height: auto; border-radius: 12px; margin: 0 0 2rem 0; display: block;" 
+            style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
           />
         )}
 
-        <slot /> 
+        <section class="post-content">
+            <slot /> 
+        </section>
     </article>
 </Layout>
