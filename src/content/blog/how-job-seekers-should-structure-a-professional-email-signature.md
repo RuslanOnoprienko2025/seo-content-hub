@@ -40,7 +40,7 @@ An email signature available for employment clearly signals your readiness while
 
 **Direct Phone Number:** One contact number where recruiters can reach you promptly during business hours.
 
-**Professional Email Address:** firstname.lastname@gmail.com format. Avoid casual addresses that undermine professional positioning.
+**Professional Email Address:** firstname.lastname at gmail dot comformat. Avoid casual addresses that undermine professional positioning.
 
 **Portfolio or LinkedIn Profile:** Choose the most relevant link for your field—but only one. Developers benefit from GitHub showcasing actual code. Designers need portfolio sites displaying visual work. Many professionals find LinkedIn valuable for complete work history and recommendations. However, including multiple platforms (personal blog, portfolio, LinkedIn, X, and GitHub) dilutes focus and appears unprofessional to recruiters. Select whichever single link best demonstrates your qualifications for target roles.
 
@@ -236,7 +236,7 @@ Effective job seeker email signature design balances professional presentation w
 **Critical principles:**
 - Keep formatting simple for ATS compatibility
 - Choose one primary link (portfolio or LinkedIn, not multiple platforms)
-- Use professional email address format (firstname.lastname@gmail.com)
+- Use professional email address format (firstname.lastname at gmail dot com)
 - Avoid visual elements like photos that trigger spam filters
 
 **Implementation:** Email signature generator for job seekers creates professional, ATS-friendly contact blocks in 5 minutes. Most generators use standard fields—enter your information following example formats, and preview confirms correct display. Focus energy on applications and networking rather than formatting troubleshooting.
