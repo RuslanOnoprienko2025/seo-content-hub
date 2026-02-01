@@ -40,7 +40,7 @@ An email signature available for employment clearly signals your readiness while
 
 **Direct Phone Number:** One contact number where recruiters can reach you promptly during business hours.
 
-**Professional Email Address:** firstname.lastname at gmail dot comformat. Avoid casual addresses that undermine professional positioning.
+**Professional Email Address:** firstname.lastname at gmail dot com format. Avoid casual addresses that undermine professional positioning.
 
 **Portfolio or LinkedIn Profile:** Choose the most relevant link for your field—but only one. Developers benefit from GitHub showcasing actual code. Designers need portfolio sites displaying visual work. Many professionals find LinkedIn valuable for complete work history and recommendations. However, including multiple platforms (personal blog, portfolio, LinkedIn, X, and GitHub) dilutes focus and appears unprofessional to recruiters. Select whichever single link best demonstrates your qualifications for target roles.
 
