@@ -2,15 +2,40 @@
 import Layout from './Layout.astro';
 const { title, seo_title, description, image, show_image, project } = Astro.props;
 const content = { title, seo_title, description, image, show_image, project };
+
+// Динамический импорт изображения из src/assets/images
+let resolvedImage = null;
+if (content.image) {
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif,webp}');
+  const imagePath = content.image.startsWith('/') ? content.image : `/src/assets/images/${content.image}`;
+  
+  // Проверяем разные варианты пути
+  const possiblePaths = [
+    imagePath,
+    `/src/assets/${content.image}`,
+    content.image
+  ];
+  
+  for (const path of possiblePaths) {
+    if (images[path]) {
+      resolvedImage = (await images[path]()).default;
+      break;
+    }
+  }
+}
 ---
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
     <article>
         <h1>{content.title}</h1>
 
-        {content.image && content.show_image && (
-          <img 
-            src={content.image} 
-            alt={content.title} 
+{/* Оптимизированная картинка через Image компонент */}
+        {resolvedImage && content.show_image && (
+          <Image 
+            src={resolvedImage} 
+            alt={content.title}
+            inferSize
+            format="webp"
+            quality={80}
             style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
           />
         )}
