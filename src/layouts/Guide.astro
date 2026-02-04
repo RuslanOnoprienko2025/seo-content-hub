@@ -7,7 +7,7 @@ const content = { title, seo_title, description, image, show_image, project };
 // Динамический импорт изображения из src/assets/images
 let resolvedImage = null;
 if (content.image) {
-  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif,webp}');
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp,JPG,PNG,WEBP}', { eager: true });
   const imagePath = content.image.startsWith('/') ? content.image : `/src/assets/images/${content.image}`;
   
   // Проверяем разные варианты пути
@@ -19,7 +19,7 @@ if (content.image) {
   
   for (const path of possiblePaths) {
     if (images[path]) {
-      resolvedImage = (await images[path]()).default;
+      resolvedImage = images[path].default;
       break;
     }
   }
