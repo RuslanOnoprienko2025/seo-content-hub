@@ -2,7 +2,7 @@
 title: How Job Seekers Should Structure a Professional Email Signature
 date: 2026-02-01T22:50:00.000+02:00
 layout: ../../layouts/Guide.astro
-image: src/assets/images/job-seeker-email-signature.png
+image: /src/assets/images/job-seeker-email-signature.png
 show_image: true
 seo_title: "Job Seeker Email Signature: Examples & Best Practices"
 description: Create a professional email signature for job applications.
