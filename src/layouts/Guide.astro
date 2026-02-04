@@ -1,33 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from './Layout.astro';
 const { title, seo_title, description, image, show_image, project } = Astro.props;
 const content = { title, seo_title, description, image, show_image, project };
-
-// Динамический импорт изображения из src/assets/images
-let resolvedImage = null;
-
-if (content.image) {
-  try {
-    // Убираем лишние префиксы из пути
-    let cleanPath = content.image;
-    
-    // Варианты путей, которые может вернуть Decap CMS
-    if (cleanPath.startsWith('src/assets/images/')) {
-      cleanPath = cleanPath.replace('src/assets/images/', '');
-    } else if (cleanPath.startsWith('/src/assets/images/')) {
-      cleanPath = cleanPath.replace('/src/assets/images/', '');
-    } else if (cleanPath.startsWith('images/')) {
-      cleanPath = cleanPath.replace('images/', '');
-    }
-    
-    // Динамический импорт
-    const imageModule = await import(`../assets/images/${cleanPath}`);
-    resolvedImage = imageModule.default;
-  } catch (error) {
-    console.error('Error loading image:', error);
-  }
-}
 ---
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
     <article>
@@ -36,13 +10,11 @@ if (content.image) {
         </div>
         <h1>{content.title}</h1>
 
-{resolvedImage && content.show_image && (
-          <Image 
-            src={resolvedImage} 
-            alt={content.seo_title || content.title}
-            inferSize
-            format="webp"
-            quality={80}
+        {/* Обновленная строка с картинкой */}
+        {content.image && content.show_image && (
+          <img 
+            src={content.image} 
+            alt={content.seo_title || content.title} 
             style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
           />
         )}
