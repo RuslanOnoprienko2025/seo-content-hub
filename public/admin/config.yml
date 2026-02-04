@@ -6,7 +6,7 @@ backend:
   auth_endpoint: auth
 
 media_folder: "src/assets/images"
-public_folder: "/_astro"
+public_folder: "/src/assets/images"
 
 collections:
   - name: "blog"
