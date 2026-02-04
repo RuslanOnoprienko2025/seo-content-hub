@@ -6,32 +6,26 @@ const content = { title, seo_title, description, image, show_image, project };
 
 // Динамический импорт изображения из src/assets/images
 let resolvedImage = null;
-let optimizedImage = null;
 
 if (content.image) {
-  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp,JPG,PNG,WEBP}', { eager: true });
-  const imagePath = content.image.startsWith('/') ? content.image : `/src/assets/images/${content.image}`;
-  
-  // Проверяем разные варианты пути
-  const possiblePaths = [
-    imagePath,
-    `/src/assets/${content.image}`,
-    content.image
-  ];
-  
-  for (const path of possiblePaths) {
-    if (images[path]) {
-      resolvedImage = images[path].default;
-      break;
+  try {
+    // Убираем лишние префиксы из пути
+    let cleanPath = content.image;
+    
+    // Варианты путей, которые может вернуть Decap CMS
+    if (cleanPath.startsWith('src/assets/images/')) {
+      cleanPath = cleanPath.replace('src/assets/images/', '');
+    } else if (cleanPath.startsWith('/src/assets/images/')) {
+      cleanPath = cleanPath.replace('/src/assets/images/', '');
+    } else if (cleanPath.startsWith('images/')) {
+      cleanPath = cleanPath.replace('images/', '');
     }
-  }
-// 2. Генерируем WebP версию "на лету"
-  if (resolvedImage) {
-    optimizedImage = await getImage({ 
-      src: resolvedImage, 
-      format: 'webp', 
-      quality: 80 
-    });
+    
+    // Динамический импорт
+    const imageModule = await import(`../../assets/images/${cleanPath}`);
+    resolvedImage = imageModule.default;
+  } catch (error) {
+    console.error('Error loading image:', error);
   }
 }
 ---
@@ -42,13 +36,13 @@ if (content.image) {
         </div>
         <h1>{content.title}</h1>
 
-{/* 3. Выводим уже оптимизированный объект */}
-        {optimizedImage && content.show_image && (
-          <img 
-            src={optimizedImage.src} 
+{resolvedImage && content.show_image && (
+          <Image 
+            src={resolvedImage} 
             alt={content.seo_title || content.title}
-            {...optimizedImage.attributes}
-            loading="eager"
+            inferSize
+            format="webp"
+            quality={80}
             style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
           />
         )}
