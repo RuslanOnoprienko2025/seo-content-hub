@@ -7,12 +7,6 @@ export default defineConfig({
   build: {
     format: 'directory',    // Добавьте эту строку
   },
-  // ЭТОТ БЛОК РЕШАЕТ ПРОБЛЕМУ С КАРТИНКАМИ
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/squoosh'
-    }
-  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
