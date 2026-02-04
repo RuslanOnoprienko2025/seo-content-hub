@@ -6,6 +6,8 @@ const content = { title, seo_title, description, image, show_image, project };
 
 // Динамический импорт изображения из src/assets/images
 let resolvedImage = null;
+let optimizedImage = null;
+
 if (content.image) {
   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp,JPG,PNG,WEBP}', { eager: true });
   const imagePath = content.image.startsWith('/') ? content.image : `/src/assets/images/${content.image}`;
@@ -23,6 +25,14 @@ if (content.image) {
       break;
     }
   }
+// 2. Генерируем WebP версию "на лету"
+  if (resolvedImage) {
+    optimizedImage = await getImage({ 
+      src: resolvedImage, 
+      format: 'webp', 
+      quality: 80 
+    });
+  }
 }
 ---
 <Layout title={content.seo_title || content.title} description={content.description} image={content.image} project={content.project}>
@@ -32,17 +42,16 @@ if (content.image) {
         </div>
         <h1>{content.title}</h1>
 
-{/* Вывод оптимизированной картинки через прямой путь */}
-{resolvedImage && content.show_image && (
-  <img 
-    src={resolvedImage.src} 
-    alt={content.seo_title || content.title}
-    width={resolvedImage.width}
-    height={resolvedImage.height}
-    loading="eager"
-    style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
-  />
-)}
+{/* 3. Выводим уже оптимизированный объект */}
+        {optimizedImage && content.show_image && (
+          <img 
+            src={optimizedImage.src} 
+            alt={content.seo_title || content.title}
+            {...optimizedImage.attributes}
+            loading="eager"
+            style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
+          />
+        )}
 
         <section class="guide-content">
             <slot /> 
