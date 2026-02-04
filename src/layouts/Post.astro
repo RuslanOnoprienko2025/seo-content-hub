@@ -33,7 +33,7 @@ if (content.image) {
         {resolvedImage && content.show_image && (
           <Image 
             src={resolvedImage} 
-            alt={content.title}
+            alt={content.seo_title || content.title}
             inferSize
             format="webp"
             quality={80}
