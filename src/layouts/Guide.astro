@@ -32,17 +32,17 @@ if (content.image) {
         </div>
         <h1>{content.title}</h1>
 
- {/* Оптимизированная картинка через Image компонент */}
-        {resolvedImage && content.show_image && (
-          <Image 
-            src={resolvedImage} 
-            alt={content.seo_title || content.title}
-            inferSize
-            format="webp"
-            quality={80}
-            style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
-          />
-        )}
+{/* Вывод оптимизированной картинки через прямой путь */}
+{resolvedImage && content.show_image && (
+  <img 
+    src={resolvedImage.src} 
+    alt={content.seo_title || content.title}
+    width={resolvedImage.attributes.width}
+    height={resolvedImage.attributes.height}
+    loading="eager"
+    style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
+  />
+)}
 
         <section class="guide-content">
             <slot /> 
