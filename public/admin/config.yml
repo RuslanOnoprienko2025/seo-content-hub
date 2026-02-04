@@ -5,8 +5,8 @@ backend:
   base_url: https://seo-content-hub-v2.pages.dev
   auth_endpoint: auth
 
-media_folder: "src/assets/images"
-public_folder: "src/assets/images"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "blog"
