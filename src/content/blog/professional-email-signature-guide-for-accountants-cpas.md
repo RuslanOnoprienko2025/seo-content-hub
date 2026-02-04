@@ -2,7 +2,7 @@
 title: Professional Email Signature Guide for Accountants & CPAs
 date: 2026-01-26T23:52:00.000+02:00
 layout: ../../layouts/Guide.astro
-image: /images/accountant-email-signature.png
+image: /src/assets/images/accountant-email-signature.webp
 show_image: true
 seo_title: "Email Signature for Accountants & CPAs: Best Practices"
 description: Create a professional email signature for accountants and CPAs.
