@@ -203,7 +203,7 @@ The inline format conserves vertical space by combining elements horizontally. T
 **Example 1: Tax Professional Signature**
 
 ```
-Rebecca Thompson, EA | Enrolled Agent at Thompson Tax Solutions
+Rebecca Thompson, EA | Enrolled Agent at Thompson Solutions
 (555) 876-5432
 rebecca.thompson@thompsontax.com
 thompsontax.com
