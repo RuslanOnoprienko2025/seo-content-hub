@@ -132,7 +132,7 @@ richardsonlegal.com
 ### Example 2: Inline Format
 
 ```
-Lisa Chang, J.D. | Attorney (Bar #45678, NY) at Sterling Legal Group
+Lisa Chang, J.D. | Attorney (Bar #45678, NY) at Sterling Group
 (555) 234-5678
 lchang@sterlinglegal.com
 sterlinglegal.com
