@@ -42,7 +42,6 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         padding: 40px 20px;
     }
 
-    /* Базовый заголовок для десктопа */
     h1 { 
         font-size: 2.5rem; 
         font-weight: 700; 
@@ -50,19 +49,17 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         margin-bottom: 1.5rem;
         color: #000;
         letter-spacing: -0.02em;
-        /* Предотвращает выезд длинных слов за край экрана */
         overflow-wrap: break-word;
     }
 
-    /* Адаптация для мобильных устройств (смартфоны) */
     @media (max-width: 640px) {
         h1 {
-            font-size: 1.75rem; /* Значительно меньше для мобилок */
+            font-size: 1.75rem;
             line-height: 1.25;
             margin-bottom: 1rem;
         }
         .container {
-            padding: 20px 15px; /* Уменьшаем отступы контейнера, чтобы контенту было просторнее */
+            padding: 20px 15px;
         }
     }
 
@@ -73,7 +70,6 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         margin-bottom: 1rem;
     }
 
-    /* Уменьшаем и H2 на мобилках для гармонии */
     @media (max-width: 640px) {
         .prose h2 {
             font-size: 1.25rem;
@@ -98,6 +94,8 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         color: #0051ad;
     }
     .prose p { margin-bottom: 1.25rem; }
+
+    /* Базовые стили для блоков с подписями */
     pre {
         background-color: #f6f8fa !important;
         padding: 1rem;
@@ -110,16 +108,19 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         font-size: 0.9em;
     }
 
-/* Специальные правки для мобилок, чтобы всё влезло без скролла */
+    /* Специальные правки для мобилок */
     @media (max-width: 640px) {
         pre {
-            padding: 0.5rem;   /* Уменьшаем внутренние поля, чтобы дать больше места тексту */
-            overflow: hidden;  /* Полностью отключаем скролл */
+            padding: 0.5rem;
+            overflow: hidden !important; /* Убираем скролл */
         }
         pre code {
-            font-size: 0.5rem; /* Твой сверхмелкий шрифт */
-            white-space: nowrap; /* Запрещаем перенос, заставляем стоять в одну строку */
-            letter-spacing: -0.01em; /* Слегка сужаем буквы, чтобы влезло еще больше */
+            font-size: 0.5rem !important; /* Твой мелкий шрифт */
+            
+            /* ГЛАВНОЕ ИСПРАВЛЕНИЕ: */
+            white-space: pre !important;  /* Возвращаем перенос строк, чтобы не летело форматирование */
+            display: block;
+            letter-spacing: -0.01em; 
         }
     }
 </style>
