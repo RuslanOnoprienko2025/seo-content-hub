@@ -10,14 +10,19 @@ const content = { title, seo_title, description, image, show_image, project };
         </div>
         <h1>{content.title}</h1>
 
-        {/* Обновленная строка с картинкой */}
+        {/* --- ОБНОВЛЕННЫЙ БЛОК НИЖЕ --- */}
         {content.image && content.show_image && (
           <img 
             src={content.image} 
             alt={content.seo_title || content.title} 
-            style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
+            width="1536" 
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+            style="width: 100%; height: auto; aspect-ratio: 1536 / 1024; border-radius: 12px; margin: 2rem 0; display: block; object-fit: cover;"
           />
         )}
+        {/* --- КОНЕЦ ОБНОВЛЕННОГО БЛОКА --- */}
 
         <section class="guide-content">
             <slot /> 
