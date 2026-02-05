@@ -104,7 +104,7 @@ Stack each element on separate lines:
 
 ```
 Jennifer Martinez
-Senior Account Manager
+Account Manager
 CloudTech Solutions
 (555) 234-5678
 jennifer.martinez@cloudtech.com
@@ -118,7 +118,7 @@ This format maximizes readability, works flawlessly on mobile, and renders consi
 Combine elements horizontally for space efficiency:
 
 ```
-Jennifer Martinez | Senior Account Manager at CloudTech Solutions
+Jennifer Martinez | Account Manager at CloudTech Solutions
 (555) 234-5678
 jennifer.martinez@cloudtech.com
 cloudtech.com
