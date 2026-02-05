@@ -177,7 +177,7 @@ lakesidemedical.com
 ### Example 7: Compact Physician Signature (Inline)
 
 ```
-James Park, MD | Cardiologist at Heart Institute, Memorial Hospital
+James Park, MD | Cardiologist at Memorial Hospital
 (555) 234-9876
 james.park@memorialhospital.org
 memorialhospital.org/cardiology
