@@ -15,11 +15,17 @@ const content = { title, seo_title, description, image, show_image, project };
           <img 
             src={content.image} 
             alt={content.seo_title || content.title} 
-            width="1536" 
-            height="1024"
             loading="eager"
             fetchpriority="high"
-            style="width: 100%; height: auto; aspect-ratio: 1536 / 1024; border-radius: 12px; margin: 2rem 0; display: block; object-fit: cover;"
+            decoding="async"
+            style="
+                width: 100%; 
+                max-width: 1536px; /* Не дает маленьким картинкам растягиваться больше своего размера */
+                height: auto; 
+                border-radius: 12px; 
+                margin: 2rem auto; 
+                display: block;
+            "
           />
         )}
         {/* --- КОНЕЦ ОБНОВЛЕННОГО БЛОКА --- */}
