@@ -98,41 +98,17 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         color: #0051ad;
     }
     .prose p { margin-bottom: 1.25rem; }
-    /* Стили для code blocks (примеры в карточках) */
-pre {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    overflow-x: auto;
-    line-height: 1.6;
-    font-family: 'Courier New', Courier, monospace;
-}
-pre code {
-    color: #333333;
-    font-size: 0.875rem; /* 14px для десктопа */
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 1.6;
-}
-
-/* Уменьшаем шрифт в карточках на мобильных */
-@media (max-width: 640px) {
-    pre code {
-        font-size: 0.5rem; /* ~11px для мобильных */
-    }
     pre {
+        background-color: #f6f8fa !important;
         padding: 1rem;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        overflow-x: auto;
     }
-}
-
-/* Для inline code (внутри текста) */
-code {
-    color: #e83e8c;
-    font-size: 0.9em;
-    background-color: #f8f9fa;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-}
+    code {
+        color: #24292e !important;
+        font-size: 0.9em;
+    }
 </style>
 </head>
 <body>
