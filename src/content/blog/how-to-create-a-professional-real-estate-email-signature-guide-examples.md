@@ -171,9 +171,9 @@ These formats are exactly what a **[professional real estate email signature gen
 ### Example 3: Commercial Real Estate Broker (Inline Format)
 
 ```
-Patricia Rodriguez | Commercial Broker (Lic. #98765) at Sterling CRE
+Erica Rodriguez | Commercial Broker (Lic. #98765) at Sterling CRE
 (555) 345-6789
-patricia.rodriguez@sterlingcre.com
+erica.rodriguez@sterlingcre.com
 sterlingcre.com
 ```
 
