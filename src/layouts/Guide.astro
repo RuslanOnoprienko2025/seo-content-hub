@@ -11,22 +11,29 @@ const content = { title, seo_title, description, image, show_image, project };
         <h1>{content.title}</h1>
 
         {/* --- ОБНОВЛЕННЫЙ БЛОК НИЖЕ --- */}
-        {content.image && content.show_image && (
-          <img 
-            src={content.image} 
-            alt={content.seo_title || content.title} 
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            style="
-                width: 100%; 
-                max-width: 900px; /* Не дает маленьким картинкам растягиваться больше своего размера */
-                height: auto; 
-                border-radius: 12px; 
-                margin: 2rem auto; 
-                display: block;
-            "
-          />
+       {content.image && content.show_image && (
+          <div style="
+            width: 100%; 
+            max-width: 900px; 
+            margin: 2rem auto; 
+            aspect-ratio: 1536 / 1024; /* Магия здесь: резервирует место 3:2 */
+            background: transparent; 
+          ">
+            <img 
+              src={content.image} 
+              alt={content.seo_title || content.title} 
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              style="
+                  width: 100%; 
+                  height: 100%; 
+                  border-radius: 12px; 
+                  display: block;
+                  object-fit: contain; /* Картинка впишется целиком, не растягиваясь */
+              "
+            />
+          </div>
         )}
         {/* --- КОНЕЦ ОБНОВЛЕННОГО БЛОКА --- */}
 
