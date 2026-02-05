@@ -174,9 +174,9 @@ The inline format combines elements horizontally, conserving vertical space whil
 **Example 1: Insurance Agency Executive**
 
 ```
-Lisa Thompson | Managing Partner at Thompson Insurance Group
+Lia Thompson | Managing Partner at Thompson Insurance Group
 (555) 654-3210
-lisa.thompson@thompsonins.com
+lia.thompson@thompsonins.com
 thompsonins.com
 ```
 
@@ -187,7 +187,7 @@ thompsonins.com
 **Example 2: Property & Casualty Agent**
 
 ```
-James Wilson | P&C Insurance Agent at Wilson Insurance Associates
+James Wilson | P&C Insurance Agent at Wilson Insurance, LLC
 (555) 987-6543
 james.wilson@wilsoninsurance.com
 wilsoninsurance.com
@@ -200,7 +200,7 @@ wilsoninsurance.com
 **Example 3: Senior Insurance Advisor with Designation**
 
 ```
-Patricia Green, CLU | Senior Insurance Advisor at Premier Life Solutions
+Patricia Green, CLU | Senior Advisor at Premier Life Solutions
 (555) 234-9876
 patricia.green@premierlife.com
 premierlife.com
