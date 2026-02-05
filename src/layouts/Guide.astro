@@ -10,36 +10,14 @@ const content = { title, seo_title, description, image, show_image, project };
         </div>
         <h1>{content.title}</h1>
 
-        {/* --- ОБНОВЛЕННЫЙ БЛОК НИЖЕ --- */}
-      {content.image && content.show_image && (
-  <div style="
-    width: 100%; 
-    max-width: 900px; 
-    margin: 2rem auto; 
-    display: block;
-    line-height: 0;
-  ">
-    <img 
-      src={content.image} 
-      alt={content.seo_title || content.title} 
-      loading="eager"
-      fetchpriority="high"
-      /* Меняем на sync, чтобы мобилка отрисовала картинку мгновенно при получении данных */
-      decoding="sync" 
-      style="
-        width: 100%; 
-        height: auto; 
-        border-radius: 12px; 
-        display: block;
-        box-shadow: none;
-        /* Резервируем место ПЕРЕД загрузкой, чтобы текст не прыгал из нуля */
-        content-visibility: auto;
-        contain-intrinsic-size: 1px 500px; 
-      "
-    />
-  </div>
-)}
-        {/* --- КОНЕЦ ОБНОВЛЕННОГО БЛОКА --- */}
+        {/* Обновленная строка с картинкой */}
+        {content.image && content.show_image && (
+          <img 
+            src={content.image} 
+            alt={content.seo_title || content.title} 
+            style="width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; display: block;"
+          />
+        )}
 
         <section class="guide-content">
             <slot /> 
