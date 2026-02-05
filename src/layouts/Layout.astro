@@ -109,6 +109,19 @@ const canonicalURL = new URL(cleanPath, Astro.url.origin);
         color: #24292e !important;
         font-size: 0.9em;
     }
+
+/* Специальные правки для мобилок, чтобы всё влезло без скролла */
+    @media (max-width: 640px) {
+        pre {
+            padding: 0.5rem;   /* Уменьшаем внутренние поля, чтобы дать больше места тексту */
+            overflow: hidden;  /* Полностью отключаем скролл */
+        }
+        pre code {
+            font-size: 0.5rem; /* Твой сверхмелкий шрифт */
+            white-space: nowrap; /* Запрещаем перенос, заставляем стоять в одну строку */
+            letter-spacing: -0.01em; /* Слегка сужаем буквы, чтобы влезло еще больше */
+        }
+    }
 </style>
 </head>
 <body>
