@@ -2,7 +2,7 @@
 title: How to Create a Professional Real Estate Email Signature (Guide + Examples)
 date: 2026-01-17T12:45:00.000+02:00
 layout: ../../layouts/Guide.astro
-image: /images/real-estate-email-signatures.png
+image: /images/real-estate-email-signature.webp
 show_image: true
 seo_title: "Professional Realtor Email Signature: Complete Guide"
 description: Essential elements and templates for real estate agent email
