@@ -68,15 +68,15 @@ Photos appear unnecessary in medical email correspondence. Unlike industries whe
 
 Images create inconsistent displays across platforms. Different email clients (Outlook, Gmail, Apple Mail) render embedded images differently, causing formatting problems that undermine the professional presentation physicians need when communicating with patients, specialists, and hospital administrators.
 
-**Recommendation:** Use text-only signatures for all physician communications. Save professional photos for hospital websites, LinkedIn profiles, and directories where visual presentation serves legitimate purposes. A clean, text-based healthcare email signature maintains professionalism across all medical correspondence.
+**Recommendation:** Use text-only HTML signatures for all physician communications. Save professional photos for hospital websites, LinkedIn profiles, and directories where visual presentation serves legitimate purposes. A clean, text-based HTML healthcare email signature maintains professionalism across all medical correspondence.
 
 ### Mobile Optimization
 
 Patients and colleagues review emails on smartphones between appointments, during rounds, and outside office hours. Your medical doctor email signature must remain readable on small screens without horizontal scrolling or formatting problems.
 
-Text-based formatting adapts automatically to narrow mobile viewports. When signatures use simple text without tables, images, or complex HTML structures, content reflows naturally to fit smartphone screens. Contact information stays visible, phone numbers remain clickable for immediate calling, email addresses work as tap-to-email links, and website URLs open directly in mobile browsers.
+Text-based HTML formatting adapts automatically to narrow mobile viewports. When signatures use simple text without tables, images, or complex HTML structures, content reflows naturally to fit smartphone screens. Contact information stays visible, phone numbers remain clickable for immediate calling, email addresses work as tap-to-email links, and website URLs open directly in mobile browsers.
 
-Professional presentation persists across all devices. Simple text formatting ensures your credentials, hospital affiliation, and contact details display consistently whether patients read emails on desktop computers, tablets, or smartphones—maintaining professional standards regardless of how recipients access their messages.
+Professional presentation persists across all devices. Simple text HTML formatting ensures your credentials, hospital affiliation, and contact details display consistently whether patients read emails on desktop computers, tablets, or smartphones—maintaining professional standards regardless of how recipients access their messages.
 
 Avoid complex HTML that breaks on mobile. A properly formatted email signature for doctor communications should use a simple text structure that adapts seamlessly to any screen size.
 
@@ -228,7 +228,7 @@ Choose layout based on your communication needs and personal preference:
 
 **Inline format** offers compact presentation combining specialty and affiliation in a single line. Saves vertical space while maintaining professional presentation. Useful for physicians managing high-volume email correspondence where brevity improves email scanning efficiency.
 
-Both formats maintain text-only structure for HIPAA compliance and reliable rendering across email platforms.
+Both formats maintain text-only HTML structure for HIPAA compliance and reliable rendering across email platforms.
 
 **Step 3: Generate Clean Code**
 
@@ -263,9 +263,9 @@ Effective doctor email signature design balances professional credential present
 
 Institutional email domain mandatory for HIPAA compliance. All patient communication must use hospital or practice email systems with appropriate security controls.
 
-Text-only format ensures reliable delivery. Simple text signatures without embedded photos or complex HTML prevent spam filtering and ensure consistent display across all email platforms.
+Text-only HTML format ensures reliable delivery. Simple text signatures without embedded photos or complex HTML prevent spam filtering and ensure consistent display across all email platforms.
 
-Mobile optimization ensures readability on all devices. Text-based formatting adapts automatically to smartphone screens where patients and colleagues increasingly read medical correspondence.
+Mobile optimization ensures readability on all devices. Text-based HTML formatting adapts automatically to smartphone screens where patients and colleagues increasingly read medical correspondence.
 
 Keep credentials relevant to current practice. Include MD/DO degree plus maximum 1-2 fellowships directly related to specialty.
 
@@ -279,6 +279,6 @@ Use secure email systems for PHI discussions. Beyond signature formatting, email
 
 **Impact:** Professional medical doctor email signature presentation builds patient trust through clear credential display and institutional affiliation. HIPAA-compliant formatting protects patient privacy and meets regulatory requirements. Consistent presentation across all communications reinforces professional standing in the medical community.
 
-Modern physician email signature and medical professional email signature design means clean text formatting with proper credential presentation and HIPAA compliance. Every physician should prioritize professional standards, regulatory compliance, and clear communication in all email correspondence.
+Modern physician email signature and medical professional email signature design means clean text HTML formatting with proper credential presentation and HIPAA compliance. Every physician should prioritize professional standards, regulatory compliance, and clear communication in all email correspondence.
 
 Create your **[professional doctor signature](https://www.emailsignatures.xyz/)** in under 5 minutes.
