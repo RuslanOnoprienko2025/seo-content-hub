@@ -269,7 +269,7 @@ Both examples share critical success factors:
 - **Simplicity:** No visual clutter, photos, icons, or colors
 - **Clarity:** Information hierarchy is immediately apparent
 - **Completeness:** All six essential components are present
-- **Technical soundness:** Pure text format ensures universal compatibility
+- **Technical soundness:** Pure text-focused HTML format ensures universal compatibility
 - **Mobile-friendly:** Vertical structure adapts well to narrow screens
 - **Lightweight:** Minimal character count ensures fast loading and low spam scores
 
