@@ -271,6 +271,6 @@ Effective professional insurance agent email signature design balances regulator
 
 **Impact:** Professional credential display builds client confidence. Consistent presentation reinforces agency brand. Compliant formatting prevents regulatory issues. Clear contact information facilitates client communication during coverage decisions.
 
-Modern insurance signature template design means clean text-focused HTMLformatting with accurate credential presentation. Every professional should prioritize compliance, consistency, and clarity above visual complexity.
+Modern insurance signature template design means clean text-focused HTML formatting with accurate credential presentation. Every professional should prioritize compliance, consistency, and clarity above visual complexity.
 
 Create your **[professional insurance agent signature](https://www.emailsignatures.xyz/)** in under 5 minutes.
