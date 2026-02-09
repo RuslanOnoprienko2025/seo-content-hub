@@ -71,11 +71,11 @@ Clinical practice focuses on nursing credentials, institutional affiliation, and
 
 Moreover, image files trigger spam filters that route messages to junk folders—problematic when time-sensitive clinical communications or patient coordination needs reliable delivery.
 
-**Recommendation:** Use text-only signatures for all communications. This is the most practical type of signature, ensuring consistent display across email clients. Professional photos belong on hospital websites, LinkedIn profiles, and facility directories where visual presentation serves legitimate purposes, not in email signature blocks.
+**Recommendation:** Use text-only HTML signatures for all communications. This is the most practical type of signature, ensuring consistent display across email clients. Professional photos belong on hospital websites, LinkedIn profiles, and facility directories where visual presentation serves legitimate purposes, not in email signature blocks.
 
 ### Mobile Optimization
 
-Your registered nurse email signature must remain readable on small screens without horizontal scrolling or formatting problems. Text-based formatting adapts automatically to narrow mobile screens. When signatures use simple text without tables, images, or complex HTML, content reflows naturally to fit smartphone displays. Contact information stays visible, phone numbers become tap-to-call links, email addresses work as tap-to-email, and website URLs open directly in mobile browsers. Simple text structure ensures your RN email signature displays correctly everywhere—desktop, tablet, and smartphone.
+Your registered nurse email signature must remain readable on small screens without horizontal scrolling or formatting problems. Text-based HTML formatting adapts automatically to narrow mobile screens. When signatures use simple text without tables, images, or complex HTML, content reflows naturally to fit smartphone displays. Contact information stays visible, phone numbers become tap-to-call links, email addresses work as tap-to-email, and website URLs open directly in mobile browsers. Simple text-focused HTML structure ensures your RN email signature displays correctly everywhere—desktop, tablet, and smartphone.
 
 ## Nurse Email Signature Examples
 
@@ -198,7 +198,7 @@ Most signature generators use standard field labels like "Job Title" or "Company
 
 **Step 2: Select Format Options**
 
-Choose layout based on your communication needs and personal preference. Vertical format provides maximum clarity with each element on a separate line. Inline format offers compact presentation combining specialty and affiliation in a single line. Saves vertical space while maintaining professional presentation. Both formats maintain text-only structure for reliable rendering across email platforms and healthcare systems.
+Choose layout based on your communication needs and personal preference. Vertical format provides maximum clarity with each element on a separate line. Inline format offers compact presentation combining specialty and affiliation in a single line. Saves vertical space while maintaining professional presentation. Both formats maintain text-only HTML for reliable rendering across email platforms and healthcare systems.
 
 **Step 3: Generate Clean Code**
 
@@ -234,9 +234,9 @@ Effective email signature design balances professional credential presentation w
 
 Institutional email required. Personal Gmail or Yahoo addresses signal an unprofessional approach to clinical communication.
 
-Text-only format ensures reliable delivery. Simple signatures without photos prevent spam filtering and ensure consistent display across all email platforms.
+Text-only HTML format ensures reliable delivery. Simple signatures without photos prevent spam filtering and ensure consistent display across all email platforms.
 
-Mobile optimization ensures readability. Text-based formatting adapts automatically to smartphone screens where healthcare teams and patients read clinical correspondence.
+Mobile optimization ensures readability. Text-based HTML formatting adapts automatically to smartphone screens where healthcare teams and patients read clinical correspondence.
 
 **HIPAA compliance:**
 
