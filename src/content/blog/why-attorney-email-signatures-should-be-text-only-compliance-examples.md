@@ -16,7 +16,7 @@ In the legal industry, professionalism is defined not by visual design, but by r
 
 Text-focused HTML email signatures work better for attorneys: they're compatible with all systems, appear professional in the legal environment, and allow you to include all necessary legal credentials without visual clutter.
 
-If you want to create a professional, text-focused HTML **[attorney email signature](https://www.emailsignatures.xyz)** that works across all platforms, you can generate one in under five minutes.
+If you want to create a professional, text-focused HTML **[attorney email signature](https://www.emailsignatures.xyz)** that works across all platforms, you can generate one in under 5 minutes.
 
 ## Why Common Email Signature Advice Doesn't Work for Attorneys
 
