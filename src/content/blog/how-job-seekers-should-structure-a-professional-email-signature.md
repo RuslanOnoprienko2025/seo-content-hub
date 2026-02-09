@@ -56,13 +56,13 @@ Finally, photos in email correspondence appear unnecessary and unusual in profes
 
 Recruiters review applications on smartphones between meetings, during commutes, and outside office hours. Your email signature for job applications must remain readable on small screens without horizontal scrolling.
 
-Text-based formatting automatically adapts to narrow mobile viewports. Contact information stays visible, links remain clickable, and professional presentation persists regardless of viewing device.
+Text-focused HTML formatting automatically adapts to narrow mobile viewports. Contact information stays visible, links remain clickable, and professional presentation persists regardless of viewing device.
 
 ### Keep It Simple for ATS
 
 Applicant Tracking Systems parse email content as part of candidate evaluation. Complex HTML formatting, embedded images, or unusual characters can cause parsing failures that remove your application from consideration.
 
-Plain text with standard spacing passes through ATS screening reliably. Save visual creativity for your portfolio—keep contact blocks technically simple for maximum compatibility.
+Text-focused HTML with standard spacing passes through ATS screening reliably. Save visual creativity for your portfolio—keep contact blocks technically simple for maximum compatibility.
 
 ## Job Seeker Email Signature Examples
 
