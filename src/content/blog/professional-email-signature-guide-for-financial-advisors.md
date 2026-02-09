@@ -56,13 +56,13 @@ Avoid using logos or photos in your email signature. This may seem counterintuit
 
 Many advisors rightly believe that financial advisor email signature formats should be built around qualifications. Clients value CFP certifications, CFA designations, and firm affiliations—not logos or portraits. As a result, logos and photos are often unnecessary in an email signature, appearing more intrusive than professional or stylish. Save profile photos for LinkedIn or your firm's website, where visual presentation genuinely adds value.
 
-**Recommendation:** Text-only signatures work across every email platform without formatting breaks. They load instantly on slow connections, bypass spam filters reliably, and ensure your contact details remain accessible regardless of recipient's email settings or security protocols. This is the most practical signature type, ensuring a clean and stylish appearance across all email clients.
+**Recommendation:** Text-only HTML signatures work across every email platform without formatting breaks. They load instantly on slow connections, bypass spam filters reliably, and ensure your contact details remain accessible regardless of recipient's email settings or security protocols. This is the most practical signature type, ensuring a clean and stylish appearance across all email clients.
 
 ### Mobile Optimization
 
 Clients often review a financial advisor email signature on their mobile devices—during a lunch break, while preparing for morning meetings, or when traveling. Small screens demand simple, readable formatting.
 
-Plain-text signatures scale perfectly for mobile viewing. Phone numbers automatically convert into clickable call buttons, email addresses become instant contact links, and website URLs open with a single tap. No zooming, horizontal scrolling, or pinching is required—everything displays correctly across iPhones, Android devices, and tablets.
+Image-free HTML signatures scale perfectly for mobile viewing. Phone numbers automatically convert into clickable call buttons, email addresses become instant contact links, and website URLs open with a single tap. No zooming, horizontal scrolling, or pinching is required—everything displays correctly across iPhones, Android devices, and tablets.
 
 ## Financial Advisor Email Signature Examples
 
@@ -183,7 +183,7 @@ Most signature generators use standard field labels like "Job Title" or "Company
 
 **Step 2: Select Format Options**
 
-Choose a vertical format for maximum clarity with each element on a separate line. Or select inline format for compact presentation combining title and firm in single line. Both maintain text-only structure for reliable rendering and compliance.
+Choose a vertical format for maximum clarity with each element on a separate line. Or select inline format for compact presentation combining title and firm in single line. Both maintain text-only HTML structure for reliable rendering and compliance.
 
 **Step 3: Generate Clean Code**
 
@@ -218,9 +218,9 @@ Effective financial advisor email signature design balances professional credent
 
 Proper credential formatting. CFP, CFA, CPA after name. No periods. Multiple credentials: academic degrees first (MBA, MS), then professional designations alphabetically (CFA before CFP).
 
-Text-only format ensures reliable delivery. Simple signatures without photos prevent spam filtering and ensure consistent display across email platforms.
+Text-only HTML format ensures reliable delivery. Simple signatures without photos prevent spam filtering and ensure consistent display across email platforms.
 
-Mobile optimization ensures readability. Text-based formatting adapts automatically to smartphone screens where clients read communications.
+Mobile optimization ensures readability. Text-based HTML formatting adapts automatically to smartphone screens where clients read communications.
 
 **Regulatory compliance:**
 
