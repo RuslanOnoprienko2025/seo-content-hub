@@ -95,8 +95,6 @@ All of this just to avoid paying.
 
 In reality, that trade-off rarely makes sense.
 
-If you want to **[create a professional email signature](https://www.emailsignatures.xyz/)** without the friction, a straightforward generator that focuses on the task itself works better than trying to navigate free tool limitations.
-
 ## Why Paying Once Can Be the Better Option
 
 There's a simpler way to handle this.
