@@ -110,32 +110,34 @@ The platform assumes you need to manage signatures at scale. If you don't, it's 
 
 Most WiseStamp competitors target different audiences. Each alternative solves a different problem:
 
-<table>
-  <thead>
-    <tr>
-      <th>Alternative</th>
-      <th>Best For</th>
-      <th>Pricing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Signature.email</td>
-      <td>More control</td>
-      <td>$19 one-time (individual), $19–39/mo (teams)</td>
-    </tr>
-    <tr>
-      <td>MySignature</td>
-      <td>More simplicity</td>
-      <td>From $4/month</td>
-    </tr>
-    <tr>
-      <td>NEWOLDSTAMP</td>
-      <td>Team management</td>
-      <td>Contact for pricing</td>
-    </tr>
-  </tbody>
-</table>
+<div style="max-width: 800px; margin: 20px 0; overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+    <thead>
+      <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <th style="padding: 16px; text-align: left; color: white; font-weight: 600;">Alternative</th>
+        <th style="padding: 16px; text-align: left; color: white; font-weight: 600;">Best For</th>
+        <th style="padding: 16px; text-align: left; color: white; font-weight: 600;">Pricing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: #f8f9fa;">
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef; font-weight: 500;">Signature.email</td>
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef;">More control</td>
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef;">$19 one-time (individual), $19–39/mo (teams)</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef; font-weight: 500;">MySignature</td>
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef;">More simplicity</td>
+        <td style="padding: 14px; border-bottom: 1px solid #e9ecef;">From $4/month</td>
+      </tr>
+      <tr style="background-color: #f8f9fa;">
+        <td style="padding: 14px; font-weight: 500;">NEWOLDSTAMP</td>
+        <td style="padding: 14px;">Team management</td>
+        <td style="padding: 14px;">Contact for pricing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 If you need deeper design control, Signature.email makes sense. If you want a simpler, cleaner workflow, MySignature fits better. If you need to manage signatures for a growing team, NEWOLDSTAMP is built for that.
 
