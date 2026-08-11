@@ -259,6 +259,8 @@ Manual signature creation introduces risks that automated generation prevents:
 
 Automated generation solves these challenges. Input information once, receive properly formatted code, deploy consistently across all platforms.
 
+Many accountants start with a free tool assuming it'll save time, only to discover **[free tools often make email signatures harder than they should be](https://blog.emailsignatures.xyz/why-free-tools-often-make-email-signatures-harder-than-they-should-be/)**.
+
 ### How to Generate Your Accounting Signature
 
 Creating your email signature for CPA professionals follows a straightforward three-step process:
