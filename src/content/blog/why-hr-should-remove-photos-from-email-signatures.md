@@ -159,6 +159,48 @@ Once you've created your signature, you'll need to install it in your email clie
 
 **For Outlook users:** This **[Outlook signature setup guide](https://blog.emailsignatures.xyz/how-to-add-signature-in-outlook-complete-setup-guide-for-2026/)** covers desktop client, web interface, and Outlook 365.
 
+## Example Signatures
+
+The six-element structure works because it's flexible enough to adapt across recruiting contexts without adding visual weight. Here's how it looks in practice for three common scenarios.
+
+*Recruiter outreach (cold email to candidates)*
+
+```
+Sarah Chen
+Senior Technical Recruiter
+Acme Robotics
+
+Phone: +14155550182
+Email: sarah.chen@acmerobotics.com
+Web: acmerobotics.com/careers
+```
+
+*Internal HR communication (onboarding, benefits, payroll)*
+
+```
+James Whitfield
+HR Generalist — People Operations
+Meridian Financial
+
+Phone: +13125550947
+Email: james.whitfield@meridianfinancial.com
+Web: meridianfinancial.com/hr-portal
+```
+
+*Talent lead with LinkedIn embedded in text*
+
+```
+Maya Torres
+Head of Talent Acquisition
+Northstar Labs
+
+Phone: +12065550316
+Email: maya.torres@northstarlabs.io
+Web: northstarlabs.io | linkedin.com/in/mayatorres
+```
+
+Notice what's absent: no photos, no social icons, no banners. Each signature answers the same question—who is this, what do they do, how do you reach them—without adding a single element that risks broken rendering or a spam flag.
+
 ## The Bottom Line
 
 Your email footer shapes whether candidates even see your message. Recruiters who consistently get responses use verified structure over visual complexity. The difference isn't cosmetic—it's measurable in deliverability rates.
