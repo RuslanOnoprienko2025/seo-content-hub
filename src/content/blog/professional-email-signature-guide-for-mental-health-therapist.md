@@ -125,7 +125,9 @@ Adding social media icons, banners, or promotional messages can make a counselin
 
 On the other hand, leaving out key details can create confusion. If a client has to search for your contact information or ask how to book a session, the signature isn't serving its purpose.
 
-Another issue is formatting. Signatures that rely on heavy styling or images may look fine when created, but break in replies, forwards, or mobile views. A clean structure is more reliable in the long run.
+Another issue is formatting. Signatures that rely on heavy styling or images may look fine when created, but break in replies, forwards, or mobile views. 
+
+If you frequently check or send messages on mobile, you can learn how to **[create email signatures for Iphone](https://blog.emailsignatures.xyz/how-to-set-up-a-professional-iphone-email-signature/)** to ensure your layout stays clean. A simple structure is always more reliable in the long run. 
 
 ## Tone and Boundaries Matter More Than Design
 
@@ -152,5 +154,3 @@ A mental health therapist email signature works best when it stays clear, consis
 It doesn't need design elements, promotional content, or complex layouts. It needs to help clients understand who you are and how to reach you without friction.
 
 When done right, it becomes a small but reliable part of your overall communication.
-
-If you want to create a signature without dealing with formatting or setup, you can **[generate an email signature](https://www.emailsignatures.xyz/)** in minutes and use it across all your devices.
