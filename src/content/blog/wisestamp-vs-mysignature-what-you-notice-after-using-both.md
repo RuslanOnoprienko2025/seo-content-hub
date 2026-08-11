@@ -41,6 +41,8 @@ WiseStamp offers a polished onboarding flow with a wide range of customization o
 
 MySignature is easier to navigate at first. The editor feels more focused, with fewer distractions and a cleaner setup. Most users can create a working signature quickly, without spending much time exploring the platform itself. This approach works for users who just want to move quickly.
 
+If you're weighing MySignature specifically against another lightweight option, **[Signature.email vs MySignature comparison](https://blog.emailsignatures.xyz/signature-email-vs-mysignature-which-one-is-easier-to-live-with/)** breaks down the differences in day-to-day use.
+
 ## Templates and Customization
 
 Both platforms provide pre-built templates, styling controls, and basic layout editing.
