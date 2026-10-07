@@ -158,6 +158,9 @@ Gmail's signature settings are straightforward once you know where to find them.
 
 Outlook handles signatures slightly differently depending on the version. The **[Outlook signature setup guide](https://blog.emailsignatures.xyz/how-to-add-signature-in-outlook-complete-setup-guide-for-2026/)** covers both desktop and web app setup.
 
+### iPhone
+If you email clients or contractors from Apple Mail on your iPhone, use our **[iPhone setup guide](https://blog.emailsignatures.xyz/how-to-set-up-a-professional-iphone-email-signature/)** to add your signature.
+
 ## Conclusion
 
 An architect email signature isn't a formality—it's a small, consistent piece of professional communication that represents you in every message you send. 
