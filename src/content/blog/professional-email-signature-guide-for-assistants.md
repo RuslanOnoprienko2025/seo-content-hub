@@ -46,6 +46,8 @@ Your work email. It travels with forwarded messages, printed threads, and shared
 
 The organization's website. A useful reference for recipients who want to learn more about the company without asking for additional information.
 
+With your details ready, choose a tool to format them. We’ve compared 5 options in our guide to **[the best email signature generators for individuals and small teams](https://blog.emailsignatures.xyz/top-5-generators-for-professional-email-signatures/)**.
+
 ## Executive Assistant Email Signature Examples
 
 These executive assistant email signature examples demonstrate proper formatting with all six essential fields included.
