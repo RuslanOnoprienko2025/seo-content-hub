@@ -43,7 +43,7 @@ These nutritionist email signature examples use fictional practitioners and busi
 ### Independent nutritionist
 
 ```
-**Sophie Bennett**
+Sophie Bennett
 Nutritionist
 Sophie Bennett Nutrition
 Phone: +1 (512) 555-0143
@@ -56,7 +56,7 @@ Sophie receives enquiries from people who want to understand her service before 
 ### Registered dietitian in private practice
 
 ```
-**Maya Thompson, RDN**
+Maya Thompson, RDN
 Registered Dietitian Nutritionist
 Maple Table Nutrition
 Phone: +1 (312) 555-0165
@@ -69,7 +69,7 @@ Maya’s registered dietitian email signature spells out her professional role b
 ### Sports nutritionist
 
 ```
-**Daniel Brooks**
+Daniel Brooks
 Sports Nutritionist
 Stride Nutrition
 Phone: +1 (303) 555-0182
@@ -81,12 +81,14 @@ Daniel corresponds with coaches and clubs as well as individual athletes. The te
 
 ### Dietitian working at a shared clinic
 
-**Olivia Reed, RD**\
-Registered Dietitian\
-Harbour Health Clinic\
-Phone: +1 (206) 555-0174\
-Email: olivia.reed@harbourhealthclinic.com\
+```
+Olivia Reed, RD
+Registered Dietitian
+Harbour Health Clinic
+Phone: +1 (206) 555-0174
+Email: olivia.reed@harbourhealthclinic.com
 Web: harbourhealthclinic.com/team/olivia-reed
+```
 
 Olivia’s profile connects her with the clinic and explains how her appointments are arranged. The clinic number is appropriate because reception handles scheduling.
 
@@ -94,7 +96,7 @@ Olivia’s profile connects her with the clinic and explains how her appointment
 
 This nutritionist email signature template also works for dietitians when the name, credentials, and role are adapted accurately:
 
-**[Full name and relevant credentials]**\
+[Full name and relevant credentials]\
 [Professional title or focus]\
 [Business or clinic name]\
 Phone: [work phone number]\
