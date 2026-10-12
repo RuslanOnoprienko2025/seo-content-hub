@@ -42,34 +42,40 @@ These nutritionist email signature examples use fictional practitioners and busi
 
 ### Independent nutritionist
 
-**Sophie Bennett**\
-Nutritionist\
-Sophie Bennett Nutrition\
-Phone: +1 (512) 555-0143\
-Email: sophie@sophiebennettnutrition.com\
+```
+**Sophie Bennett**
+Nutritionist
+Sophie Bennett Nutrition
+Phone: +1 (512) 555-0143
+Email: sophie@sophiebennettnutrition.com
 Web: sophiebennettnutrition.com/consultations
+```
 
 Sophie receives enquiries from people who want to understand her service before arranging an appointment. The consultation page answers those initial questions and explains how to get started.
 
 ### Registered dietitian in private practice
 
-**Maya Thompson, RDN**\
-Registered Dietitian Nutritionist\
-Maple Table Nutrition\
-Phone: +1 (312) 555-0165\
-Email: maya@mapletablenutrition.com\
+```
+**Maya Thompson, RDN**
+Registered Dietitian Nutritionist
+Maple Table Nutrition
+Phone: +1 (312) 555-0165
+Email: maya@mapletablenutrition.com
 Web: mapletablenutrition.com/book
+```
 
 Maya’s registered dietitian email signature spells out her professional role beneath her name. Her booking page distinguishes first consultations from follow-up appointments, so both new and existing clients have a useful destination.
 
 ### Sports nutritionist
 
-**Daniel Brooks**\
-Sports Nutritionist\
-Stride Nutrition\
-Phone: +1 (303) 555-0182\
-Email: daniel@stridenutrition.com\
+```
+**Daniel Brooks**
+Sports Nutritionist
+Stride Nutrition
+Phone: +1 (303) 555-0182
+Email: daniel@stridenutrition.com
 Web: stridenutrition.com/teams
+```
 
 Daniel corresponds with coaches and clubs as well as individual athletes. The team services page explains his working arrangements for organizations. Information about an individual athlete or a particular session stays in the message.
 
